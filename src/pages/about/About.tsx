@@ -1,8 +1,15 @@
 import "./about.css";
 import img from "../../assets/about/a6.jpg";
 import BlogComponent from "../../components/blogC/BlogComponent";
+import { useContext } from "react";
+import DataContext from "../../DataContext";
 
 function About() {
+  const contextValue = useContext(DataContext);
+  if (!contextValue) {
+    return <div>Loading...</div>;
+  }
+  const { language } = contextValue;
   return (
     <>
       <BlogComponent

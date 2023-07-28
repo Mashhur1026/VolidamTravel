@@ -68,12 +68,17 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const singleAddCard = (newItem: CartItem) => {
-    const existingItem = cartItems.find((item) => item.id === newItem.id);
-    if (existingItem) {
-      setCartItems([]);
-    } else {
-      setCartItems((prevCartItems) => [...prevCartItems, newItem]);
+    // Check if the item already exists in the cartItems array
+    const itemExists = cartItems.some((item) => item.id === newItem.id);
+
+    // If the item exists, do not add it again
+    if (itemExists) {
+      console.log("Item already exists in the cart.");
+      return;
     }
+
+    // If the item does not exist, add it to the cartItems array
+    setCartItems((prevCartItems) => [...prevCartItems, newItem]);
   };
 
   useEffect(() => {

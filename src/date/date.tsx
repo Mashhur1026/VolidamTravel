@@ -3,27 +3,27 @@ export const navArray = {
     {
       id: 0,
       name: "Asosiy",
-      link: "#",
+      link: "/",
     },
     {
       id: 1,
       name: "Biz haqmizda",
-      link: "#about",
+      link: "/About",
     },
     {
       id: 2,
-      name: "Servislar",
-      link: "#service",
+      name: "Tur Paketlar",
+      link: "/Shop",
     },
     {
       id: 3,
-      name: "Tur Paketlar",
-      link: "#package",
+      name: "Bog'lansh",
+      link: "/Contact",
     },
     {
       id: 4,
-      name: "Bog'lansh",
-      link: "#contact",
+      name: "Blog",
+      link: "/Blog",
     },
   ],
 
@@ -31,27 +31,27 @@ export const navArray = {
     {
       id: 0,
       name: "Дом",
-      link: "#",
+      link: "/",
     },
     {
       id: 1,
       name: "О нас",
-      link: "#about",
+      link: "/About",
     },
     {
       id: 2,
-      name: "Услуги",
-      link: "#service",
+      name: "Турпакеты",
+      link: "/Shop",
     },
     {
       id: 3,
-      name: "Турпакеты",
-      link: "#package",
+      name: "Контакт",
+      link: "/Contact",
     },
     {
       id: 4,
-      name: "Контакт",
-      link: "#contact",
+      name: "Блог",
+      link: "/Blog",
     },
   ],
 
@@ -59,27 +59,27 @@ export const navArray = {
     {
       id: 0,
       name: "Home",
-      link: "#",
+      link: "/",
     },
     {
       id: 1,
       name: "About",
-      link: "#about",
+      link: "/About",
     },
     {
       id: 2,
-      name: "Services",
-      link: "#service",
+      name: "Packages",
+      link: "/Shop",
     },
     {
       id: 3,
-      name: "Packages",
-      link: "#package",
+      name: "Contact",
+      link: "/Contact",
     },
     {
       id: 4,
-      name: "Contact",
-      link: "#contact",
+      name: "Blog",
+      link: "/Blog",
     },
   ],
 };

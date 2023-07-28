@@ -23,9 +23,7 @@ function Cart() {
               <td></td>
               <td>Rasm</td>
               <td>Ism</td>
-              <td>Razmer</td>
               <td>Narx</td>
-              <td>Miqdor</td>
             </tr>
           </thead>
           <tbody>
@@ -37,22 +35,11 @@ function Cart() {
                   </button>
                 </td>
                 <td>
-                  <img src={item.img[0]} alt="" />
+                  <img src={item.imgUrl[0]} alt="" />
                 </td>
                 <td>{item.name}</td>
-                <td>
-                  <select>
-                    {item.sizes.map((size) => (
-                      <option key={size} value={size}>
-                        {size}
-                      </option>
-                    ))}
-                  </select>
-                </td>
-                <td>${item.price}</td>
-                <td>
-                  <input type="number" value={item.quantity} />
-                </td>
+
+                <td>{item.price} UZS</td>
               </tr>
             ))}
           </tbody>
@@ -65,31 +52,18 @@ function Cart() {
           <table>
             <tbody>
               <tr>
-                <td>Cart Subtotal</td>
-                <td>${total}</td>
-              </tr>
-              <tr>
-                <td>Cargo</td>
-                <td>Tavarga qarab</td>
-              </tr>
-              <tr>
                 <td>
                   <strong>Total</strong>
                 </td>
                 <td>
-                  <strong>${total}</strong>
+                  <strong>{total} UZS</strong>
                 </td>
               </tr>
             </tbody>
           </table>
-          <div className="cartCargo">
-            <Link to={`/Checkout`}>
-              <button className="normol">Proceed to checkout</button>
-            </Link>
-            <Link to={`/Cargo`}>
-              <h4>What is cargo?</h4>
-            </Link>
-          </div>
+          <Link to={`/Checkout`}>
+            <button className="normol">Proceed to checkout</button>
+          </Link>
         </div>
       </section>
     </>

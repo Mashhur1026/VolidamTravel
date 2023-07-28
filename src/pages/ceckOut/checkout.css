@@ -16,7 +16,8 @@
 }
 
 #chechout table img {
-  width: 70%;
+  width: 80%;
+  height: 80%;
 }
 
 #chechout table thead {
@@ -52,9 +53,6 @@
   margin-bottom: 30px;
   text-decoration: none;
 }
-#checkoutTotal #subtotal a {
-  text-decoration: none;
-}
 
 #subtotal table {
   border-collapse: collapse;
@@ -67,11 +65,6 @@
   border: 1px solid #e2e9e1;
   font-size: 16px;
   padding: 10px;
-}
-
-#checkoutTotal h4 {
-  color: crimson;
-  letter-spacing: 1px;
 }
 
 #checkout-form-details {
@@ -159,13 +152,7 @@
   }
 
   #checkoutTotal {
-    padding: 10px;
-  }
-
-  #checkoutTotal h4 {
-    color: crimson;
-    letter-spacing: 1px;
-    font-size: 14px;
+    padding: 30px 10px;
   }
 
   #checkout-form-details form h2 {

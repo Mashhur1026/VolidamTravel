@@ -2,18 +2,6 @@
   padding: 40px 80px;
 }
 
-.cartCargo {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.cartCargo a {
-  text-decoration: none;
-  color: crimson;
-  letter-spacing: 1px;
-  margin-left: 20px;
-}
-
 #cart table {
   width: 100%;
   border-collapse: collapse;
@@ -22,7 +10,8 @@
 }
 
 #cart table img {
-  width: 100%;
+  width: 50%;
+  height: 50%;
 }
 
 #cart table thead {
@@ -48,37 +37,24 @@
   color: crimson;
 }
 
-#cart table td:nth-child(4) select {
-  padding: 10px 5px 10px 15px;
-  width: 70%;
-}
-
-#cart table td:nth-child(1),
-#cart table td:nth-child(4),
-#cart table td:nth-child(5) {
-  width: 100px;
+#cart table td:nth-child(1) {
+  width: 5%;
   text-align: center;
 }
+
+#cart table td:nth-child(4) {
+  width: 8%;
+  text-align: center;
+}
+
 #cart table td:nth-child(3) {
-  width: 160px;
+  width: 18%;
   text-align: center;
 }
 #cart table td:nth-child(2) {
-  width: 110px;
+  width: 18%;
+  height: auto;
   text-align: center;
-}
-
-#cart table td:nth-child(6) {
-  width: 100px;
-  padding: 10px;
-}
-
-#cart table td:nth-child(6) input {
-  width: 70%;
-  padding: 10px 5px 10px 15px;
-}
-#cart table td:nth-child(6) input:focus {
-  outline: none;
 }
 
 #cart-add {
@@ -125,11 +101,6 @@
 }
 
 @media (max-width: 950px) {
-  #cart table td:nth-child(4) select {
-    padding: 7px 3px 7px 10px;
-    width: 70%;
-  }
-
   #subtotal h3 {
     font-size: 25px;
   }
@@ -140,36 +111,6 @@
   #cart-add {
     padding: 40px 20px;
   }
-
-  #subtotal table td {
-    font-size: 14px;
-  }
-
-  #cart table td:nth-child(1) {
-    width: 50px;
-    text-align: center;
-    font-size: 15px;
-  }
-  #cart table td:nth-child(2) {
-    width: 70px;
-    text-align: center;
-    font-size: 15px;
-  }
-  #cart table td:nth-child(3) {
-    width: 180px;
-    text-align: center;
-    font-size: 15px;
-  }
-  #cart table td:nth-child(4),
-  #cart table td:nth-child(5) {
-    width: 100px;
-    text-align: center;
-    font-size: 15px;
-  }
-
-  #cart table td:nth-child(6) input {
-    padding: 7px 3px 7px 10px;
-  }
 }
 
 @media (max-width: 770px) {
@@ -177,89 +118,54 @@
     width: 80%;
   }
 
-  .cartCargo a {
-    font-size: 13px;
-  }
-
   #subtotal button {
     font-size: 12px;
     padding: 13px 18px;
   }
-}
 
-@media (max-width: 640px) {
-  #cart {
-    padding: 40px 0px 40px 5px;
+  #cart table tbody td {
+    font-size: 12px;
+  }
+
+  #cart table thead td {
+    font-size: 12px;
   }
 
   #cart table td:nth-child(1) {
-    width: 30px;
-    font-size: 13px;
+    width: 2%;
+    text-align: center;
   }
 
-  #cart table td:nth-child(2) {
-    width: 50px;
-    font-size: 13px;
-  }
-
-  #cart table td:nth-child(3) {
-    width: 105px;
-    font-size: 13px;
-  }
-
-  #cart table td:nth-child(4),
-  #cart table td:nth-child(5) {
-    width: 40px;
-    font-size: 13px;
-  }
-
-  #cart table td:nth-child(6) {
-    width: 60px;
-  }
-}
-
-@media (max-width: 520px) {
-  #cart table td:nth-child(4) select {
-    padding: 3px 1px 3px 5px;
-    width: 100%;
-    font-size: 10px;
-  }
-
-  #cart {
-    padding: 40px 0px;
-  }
-
-  #cart table td {
-    font-size: 10px;
-  }
-  #cart table td:nth-child(1) {
-    width: 20px;
-    padding-left: 5px;
-    font-size: 10px;
-  }
-  #cart table td:nth-child(2) {
-    width: 40px;
-    font-size: 10px;
+  #cart table td:nth-child(4) {
+    width: 5%;
+    text-align: center;
   }
 
   #cart table td:nth-child(3) {
-    width: 90px;
-    font-size: 10px;
+    width: 6%;
+    text-align: center;
+  }
+  #cart table td:nth-child(2) {
+    width: 6%;
+    height: auto;
+    text-align: center;
   }
 
-  #cart table td:nth-child(4),
-  #cart table td:nth-child(5) {
-    width: 40px;
-    font-size: 10px;
-  }
-
-  #cart table td:nth-child(6) {
-    width: 40px;
-    font-size: 10px;
+  #cart table img {
+    width: 80%;
+    height: 80%;
   }
 }
 
 @media (max-width: 430px) {
+  #cart table tbody td {
+    font-size: 10px;
+  }
+
+  #cart table thead td {
+    font-size: 10px;
+  }
+
   #subtotal h3 {
     font-size: 20px;
   }
@@ -273,43 +179,7 @@
     padding: 13px 18px;
   }
 
-  #cart table td:nth-child(1) {
-    padding-left: 0;
-    width: 10px;
-    font-size: 9px;
-  }
-  #cart table td:nth-child(2) {
-    width: 25px;
-    font-size: 9px;
-  }
-  #cart table td:nth-child(3) {
-    width: 35px;
-    font-size: 8px;
-  }
-  #cart table td:nth-child(4),
-  #cart table td:nth-child(5) {
-    width: 16px;
-    font-size: 9px;
-  }
-
-  #cart table td:nth-child(6) {
-    width: 20px;
-    font-size: 9px;
-    padding-left: 3px;
-  }
-
-  #cart table td:nth-child(6) input {
-    padding: 4px 2px 4px 6px;
-    width: 70%;
-    font-size: 9px;
-    font-weight: 500;
-  }
-
   #cart-add {
     padding: 10px;
-  }
-
-  .cartCargo a {
-    margin-left: 0;
   }
 }

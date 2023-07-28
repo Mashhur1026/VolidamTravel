@@ -9,7 +9,6 @@ import Blog from "./pages/blog/Blog";
 import Cart from "./pages/cart/Cart";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
-import Cargo from "./pages/cargo/Cargo";
 import CheckOut from "./pages/ceckOut/CheckOut";
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
         <Route path="/product/:id" element={<SinglePage />} />
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
-        <Route path="/Cargo" element={<Cargo />} />
         <Route path="/Checkout" element={<CheckOut />} />
       </Routes>
       <Newslatter />

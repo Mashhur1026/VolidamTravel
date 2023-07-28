@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
-import "./checkout.css";
 import DataContext from "../../DataContext";
-import { Link } from "react-router-dom";
+import "./checkout.css";
 
 function CheckOut() {
   const contextValue = useContext(DataContext);
@@ -47,20 +46,18 @@ function CheckOut() {
           <thead>
             <tr>
               <td>Rasm</td>
-              <td>Razmer</td>
+              <td>Nomi</td>
               <td>Narx</td>
-              <td>Miqdor</td>
             </tr>
           </thead>
           <tbody>
             {cartItems.map((item) => (
               <tr key={item.id}>
                 <td>
-                  <img src={item.img[0]} alt="" />
+                  <img src={item.imgUrl[0]} alt="" />
                 </td>
-                <td>{item.sizes}</td>
+                <td>{item.name}</td>
                 <td>${item.price}</td>
-                <td>{item.quantity}</td>
               </tr>
             ))}
           </tbody>
@@ -72,14 +69,6 @@ function CheckOut() {
           <table>
             <tbody>
               <tr>
-                <td>Cart Subtotal</td>
-                <td>${total}</td>
-              </tr>
-              <tr>
-                <td>Cargo</td>
-                <td>Tavarga qarab</td>
-              </tr>
-              <tr>
                 <td>
                   <strong>Total</strong>
                 </td>
@@ -89,11 +78,7 @@ function CheckOut() {
               </tr>
             </tbody>
           </table>
-          <div>
-            <Link to={`/Cargo`}>
-              <h4>What is cargo?</h4>
-            </Link>
-          </div>
+          <div></div>
         </div>
       </section>
       <section id="checkout-form-details">
