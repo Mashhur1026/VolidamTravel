@@ -5,7 +5,6 @@ import Home from "./pages/home/Home";
 import SinglePage from "./pages/singlePage/SinglePage";
 import Newslatter from "./components/newslater/Newslatter";
 import Shop from "./pages/shop/Shop";
-import Blog from "./pages/blog/Blog";
 import Cart from "./pages/cart/Cart";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
@@ -18,7 +17,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Shop/*" element={<Shop />} />
-        <Route path="/Blog" element={<Blog />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/product/:id" element={<SinglePage />} />
         <Route path="/About" element={<About />} />

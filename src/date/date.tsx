@@ -20,11 +20,6 @@ export const navArray = {
       name: "Bog'lansh",
       link: "/Contact",
     },
-    {
-      id: 4,
-      name: "Blog",
-      link: "/Blog",
-    },
   ],
 
   rus: [
@@ -48,11 +43,6 @@ export const navArray = {
       name: "Контакт",
       link: "/Contact",
     },
-    {
-      id: 4,
-      name: "Блог",
-      link: "/Blog",
-    },
   ],
 
   eng: [
@@ -75,11 +65,6 @@ export const navArray = {
       id: 3,
       name: "Contact",
       link: "/Contact",
-    },
-    {
-      id: 4,
-      name: "Blog",
-      link: "/Blog",
     },
   ],
 };
