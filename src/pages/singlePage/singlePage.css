@@ -9,16 +9,6 @@
   margin-right: 50px;
 }
 
-.small-img-group {
-  display: flex;
-  justify-content: space-between;
-}
-
-.small-img-col {
-  flex-basis: 24%;
-  cursor: pointer;
-}
-
 #prodetails .single-pro-details {
   width: 50%;
   padding-top: 30px;
@@ -32,26 +22,8 @@
   font-size: 26px;
 }
 
-#prodetails .single-pro-details select {
-  display: block;
-  padding: 5px 10px;
-  margin: 20px 0px 20px 0px;
-}
-
-#prodetails .single-pro-details input {
-  width: 50px;
-  height: 47px;
-  padding-left: 10px;
-  font-size: 16px;
-  margin-right: 20px;
-}
-
-#prodetails .single-pro-details input:focus,
-#prodetails .single-pro-details select:focus {
-  outline: none;
-}
-
 #prodetails .single-pro-details button {
+  margin-top: 20px;
   background-color: #088178;
   color: #fff;
   font-size: 14px;

@@ -27,7 +27,7 @@ function Categories() {
 
       <section id="feature">
         {check(categoeiesArray).map((item: any) => (
-          <Link to={`/Shop/${item.name}`} key={item.name} className="fe-box">
+          <Link to={`/Shop/${item.name2}`} key={item.name} className="fe-box">
             <div>
               <img src={item.imgUrl} alt="Free Shipping" />
             </div>

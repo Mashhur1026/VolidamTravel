@@ -1,12 +1,22 @@
-import { array } from "../src/components/products/Products";
+import { productArray } from "./date/date";
 import { createContext, useEffect, useState } from "react";
+
+export interface CartItem {
+  id: number;
+  name: string;
+  people: string;
+  price: number;
+  category: string;
+  description: string;
+  imgUrl: string[];
+}
 
 interface DataContextValue {
   cartItems: CartItem[];
   removeItem: (newItem: CartItem) => void;
   singleProduct: (id: number) => void;
   total: number;
-  singleProductUse: CartItem[];
+  singleProductUse: CartItem | null;
   singleAddCard: (newItem: CartItem) => void;
   check: (obj: any) => any[keyof any];
   language: {
@@ -18,77 +28,14 @@ interface DataContextValue {
   setGetLenguage: (getLenguage: string) => void;
 }
 
-export interface CartItem {
-  id: number;
-  img: string[];
-  category: string;
-  cname: string;
-  name: string;
-  price: number;
-  quantity: number;
-  sizes: string[];
-  des: string;
-}
-
-const DataContext = createContext<DataContextValue | null>(null);
+export const DataContext = createContext<DataContextValue | null>(null);
 
 export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
-  //Total card
   const [total, setTotal] = useState(0);
-  useEffect(() => {
-    const newTotal = cartItems.reduce(
-      (acc, item) => acc + item.price * item.quantity,
-      0
-    );
-    setTotal(newTotal);
-  }, [cartItems]);
-  // RemoveFrom card
-  const removeItem = (newItem: CartItem) => {
-    const removedArray = cartItems.filter((item) => {
-      const idMatch = item.id === newItem.id;
-      const sizesMatch = item.sizes.every(
-        (size, index) => size === newItem.sizes[index]
-      );
-      const imgMatch = item.img.every(
-        (img, index) => img === newItem.img[index]
-      );
-
-      return !(idMatch && sizesMatch && imgMatch);
-    });
-
-    setCartItems(removedArray);
-  };
-
-  // Add to card
-  const [singleProductUse, setSingleProductUse] = useState<CartItem[]>(array);
-  const singleProduct = (id: number) => {
-    const singleReady = array.filter((cartItem) => cartItem.id === id);
-    setSingleProductUse(singleReady);
-  };
-  const singleAddCard = (newItem: CartItem) => {
-    const existingItem = cartItems.find(
-      (item) =>
-        item.id === newItem.id &&
-        item.sizes.every((size, index) => size === newItem.sizes[index]) &&
-        item.img.every((img, index) => img === newItem.img[index])
-    );
-
-    if (existingItem) {
-      setCartItems((prevCartItems) =>
-        prevCartItems.map((item) =>
-          item.id === newItem.id &&
-          item.sizes.every((size, index) => size === newItem.sizes[index]) &&
-          item.img.every((img, index) => img === newItem.img[index])
-            ? { ...item, quantity: item.quantity + newItem.quantity }
-            : item
-        )
-      );
-    } else {
-      setCartItems((prevCartItems) => [...prevCartItems, newItem]);
-    }
-  };
-
+  const [singleProductUse, setSingleProductUse] = useState<CartItem | null>(
+    null
+  );
   const [getLenguage, setGetLenguage] = useState("");
   const [language, setLenguage] = useState({
     uzb: true,
@@ -97,6 +44,40 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   });
 
   useEffect(() => {
+    const newTotal = cartItems.reduce((acc, item) => acc + item.price, 0);
+    setTotal(newTotal);
+  }, [cartItems]);
+
+  const removeItem = (newItem: CartItem) => {
+    setCartItems((prevCartItems) =>
+      prevCartItems.filter((item) => item.id !== newItem.id)
+    );
+  };
+
+  const singleProduct = (id: number) => {
+    if (getLenguage === "uzb") {
+      const product = productArray.uzb.find((item) => item.id === id);
+      setSingleProductUse(product || null);
+    } else if (getLenguage === "rus") {
+      const product = productArray.rus.find((item) => item.id === id);
+      setSingleProductUse(product || null);
+    } else {
+      const product = productArray.eng.find((item) => item.id === id);
+      setSingleProductUse(product || null);
+    }
+  };
+
+  const singleAddCard = (newItem: CartItem) => {
+    const existingItem = cartItems.find((item) => item.id === newItem.id);
+    if (existingItem) {
+      setCartItems([]);
+    } else {
+      setCartItems((prevCartItems) => [...prevCartItems, newItem]);
+    }
+  };
+
+  useEffect(() => {
+    console.log(singleProductUse);
     if (getLenguage === "rus") {
       setLenguage({ uzb: false, rus: true, eng: false });
     } else if (getLenguage === "eng") {
