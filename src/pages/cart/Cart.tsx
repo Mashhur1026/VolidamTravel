@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import BlogComponent from "../../components/blogC/BlogComponent";
 import "./cart.css";
-import DataContext from "../../DataContext";
+import DataContext, { CartItem } from "../../DataContext";
 import { Link } from "react-router-dom";
 
 interface Lang {
@@ -28,7 +28,20 @@ function Cart() {
   const { removeItem } = contextValue ?? {};
   const total = contextValue ? contextValue.total : 0;
 
+  const isItemInCart = (itemId: number): boolean => {
+    return cartItems.some((item) => item.id === itemId);
+  };
+
   const hendleClik = () => {
+    const localStorageItems = localStorage.getItem("cartItems");
+    const storedCartItems: CartItem[] = localStorageItems
+      ? JSON.parse(localStorageItems)
+      : [];
+    storedCartItems.forEach((item) => {
+      if (!isItemInCart(item.id)) {
+        cartItems.push(item);
+      }
+    });
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
 

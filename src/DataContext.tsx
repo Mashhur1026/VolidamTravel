@@ -86,7 +86,6 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   useEffect(() => {
-    console.log(singleProductUse);
     if (getLenguage === "rus") {
       setLenguage({ uzb: false, rus: true, eng: false });
     } else if (getLenguage === "eng") {

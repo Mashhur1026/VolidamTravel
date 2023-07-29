@@ -17,14 +17,13 @@ function Booking() {
     return <div>Loading...</div>;
   }
 
-  const { cartItems, language, removeItem } = contextValue;
+  const { language } = contextValue;
 
   const [bookingItems, setBookingItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
     const items = localStorage.getItem("cartItems") ?? "";
     setBookingItems(JSON.parse(items));
-    console.log(bookingItems);
   }, []);
 
   const [lang, setLang] = useState<Lang>({
@@ -63,6 +62,18 @@ function Booking() {
     }
   }, [language]);
 
+  function hendleRemove(id: number): void {
+    const items = localStorage.getItem("cartItems");
+    if (items) {
+      const parsedItems: CartItem[] = JSON.parse(items);
+      const updatedItems: CartItem[] = parsedItems.filter(
+        (item) => item.id !== id
+      );
+      localStorage.setItem("cartItems", JSON.stringify(updatedItems));
+      setBookingItems(updatedItems);
+    }
+  }
+
   return (
     <>
       <h1 className="text">{lang.h1}</h1>
@@ -77,10 +88,10 @@ function Booking() {
             </tr>
           </thead>
           <tbody>
-            {cartItems.map((item) => (
+            {bookingItems.map((item) => (
               <tr key={item.id}>
                 <td>
-                  <button onClick={() => removeItem?.(item)}>
+                  <button onClick={() => hendleRemove(item.id)}>
                     <i className="far fa-times-circle"></i>
                   </button>
                 </td>
