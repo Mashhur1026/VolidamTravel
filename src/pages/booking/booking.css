@@ -3,6 +3,31 @@
   margin-top: 30px;
 }
 
+.no-booking-con {
+  width: 60vh;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+.no-bookin-btn {
+  background-color: #088178;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+  text-decoration: none;
+  margin-bottom: 30px;
+}
+
 .btn-container-booking {
   display: flex;
   justify-content: center;
