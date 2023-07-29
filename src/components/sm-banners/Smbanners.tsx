@@ -28,23 +28,19 @@ function Smbanners() {
     <>
       <section id="sm-banner">
         {check(smArray).map((smbanner: Prop) => (
-          <>
-            <div key={smbanner.id} className="banner-box">
-              <h4>{smbanner.h4}</h4>
-              <h2>{smbanner.h2}</h2>
-              <span>{smbanner.span}</span>
-            </div>
-          </>
+          <div key={smbanner.id} className="banner-box">
+            <h4>{smbanner.h4}</h4>
+            <h2>{smbanner.h2}</h2>
+            <span>{smbanner.span}</span>
+          </div>
         ))}
       </section>
       <section id="banner3">
         {check(bannerArray).map((banner: Prop2) => (
-          <>
-            <div key={banner.id} className="banner-box">
-              <h2>{banner.h4}</h2>
-              <h3>{banner.h2}</h3>
-            </div>
-          </>
+          <div key={banner.id} className="banner-box">
+            <h2>{banner.h4}</h2>
+            <h3>{banner.h2}</h3>
+          </div>
         ))}
       </section>
     </>

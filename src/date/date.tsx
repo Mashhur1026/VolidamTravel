@@ -951,7 +951,7 @@ export const bannerArray = {
       h2: "Maxsus Siz Uchun -6%",
     },
     {
-      id: 1,
+      id: 2,
       h4: "AUSTRALIA TUR",
       h2: "Maxsus Siz Uchun -3%",
     },
@@ -968,7 +968,7 @@ export const bannerArray = {
       h2: "Специально для Вас -6%",
     },
     {
-      id: 1,
+      id: 2,
       h4: "ТУР В АВСТРАЛИЮ",
       h2: "Специально для Вас -3%",
     },
@@ -985,7 +985,7 @@ export const bannerArray = {
       h2: "Exclusive for You -6%",
     },
     {
-      id: 1,
+      id: 2,
       h4: "AUSTRALIA TOUR",
       h2: "Exclusive for You -3%",
     },
