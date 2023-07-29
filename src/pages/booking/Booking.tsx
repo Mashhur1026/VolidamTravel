@@ -1,6 +1,6 @@
 import "./booking.css";
 import { useContext, useEffect, useState } from "react";
-import DataContext from "../../DataContext";
+import DataContext, { CartItem } from "../../DataContext";
 import { Link } from "react-router-dom";
 
 interface Lang {
@@ -17,9 +17,15 @@ function Booking() {
     return <div>Loading...</div>;
   }
 
-  const { language } = contextValue;
-  const cartItems = contextValue ? contextValue.cartItems : [];
-  const { removeItem } = contextValue ?? {};
+  const { cartItems, language, removeItem } = contextValue;
+
+  const [bookingItems, setBookingItems] = useState<CartItem[]>([]);
+
+  useEffect(() => {
+    const items = localStorage.getItem("cartItems") ?? "";
+    setBookingItems(JSON.parse(items));
+    console.log(bookingItems);
+  }, []);
 
   const [lang, setLang] = useState<Lang>({
     td1: "",

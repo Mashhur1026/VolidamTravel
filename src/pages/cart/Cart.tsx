@@ -28,6 +28,10 @@ function Cart() {
   const { removeItem } = contextValue ?? {};
   const total = contextValue ? contextValue.total : 0;
 
+  const hendleClik = () => {
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  };
+
   const [lang, setLang] = useState<Lang>({
     title: "",
     text: "",
@@ -137,7 +141,9 @@ function Cart() {
               <button className="normol">{lang.mbtn}</button>
             </Link>
             <Link to={`/Booking`}>
-              <button className="normol">{lang.mbtn2}</button>
+              <button onClick={hendleClik} className="normol">
+                {lang.mbtn2}
+              </button>
             </Link>
           </div>
         </div>
