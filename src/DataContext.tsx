@@ -1,4 +1,5 @@
-import { productArray } from "./date/date";
+import Notiflix from "notiflix";
+import { productArray, singleProductAr } from "./date/date";
 import { createContext, useEffect, useState } from "react";
 
 export interface CartItem {
@@ -61,6 +62,15 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
     setCartItems((prevCartItems) =>
       prevCartItems.filter((item) => item.id !== newItem.id)
     );
+    let message = "";
+    {
+      language.uzb
+        ? (message = singleProductAr.mremoveu)
+        : language.rus
+        ? (message = singleProductAr.mremover)
+        : (message = singleProductAr.mremovee);
+    }
+    Notiflix.Notify.success(message);
   };
 
   const singleProduct = (id: number) => {
@@ -79,7 +89,15 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   const singleAddCard = (newItem: CartItem) => {
     const itemExists = cartItems.some((item) => item.id === newItem.id);
     if (itemExists) {
-      console.log("Item already exists in the cart.");
+      let message = "";
+      {
+        language.uzb
+          ? (message = singleProductAr.messageWorningu)
+          : language.rus
+          ? (message = singleProductAr.messageWorningr)
+          : (message = singleProductAr.messageWorninge);
+      }
+      Notiflix.Notify.warning(message);
       return;
     }
     setCartItems((prevCartItems) => [...prevCartItems, newItem]);

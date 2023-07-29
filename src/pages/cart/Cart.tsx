@@ -3,6 +3,8 @@ import BlogComponent from "../../components/blogC/BlogComponent";
 import "./cart.css";
 import DataContext, { CartItem } from "../../DataContext";
 import { Link } from "react-router-dom";
+import { singleProductAr } from "../../date/date";
+import Notiflix from "notiflix";
 
 interface Lang {
   text: string;
@@ -101,6 +103,18 @@ function Cart() {
     }
   }, [language]);
 
+  const alert = () => {
+    let message = "";
+    {
+      language.uzb
+        ? (message = singleProductAr.booku)
+        : language.rus
+        ? (message = singleProductAr.bookr)
+        : (message = singleProductAr.booke);
+    }
+    Notiflix.Notify.success(message);
+  };
+
   return (
     <>
       <BlogComponent title={lang.title} text={lang.text} img={lang.img} />
@@ -153,7 +167,7 @@ function Cart() {
             <Link to={`/Checkout`}>
               <button className="normol">{lang.mbtn}</button>
             </Link>
-            <Link to={`/Booking`}>
+            <Link onClick={alert} to={`/Booking`}>
               <button onClick={hendleClik} className="normol">
                 {lang.mbtn2}
               </button>

@@ -2,6 +2,8 @@ import "./booking.css";
 import { useContext, useEffect, useState } from "react";
 import DataContext, { CartItem } from "../../DataContext";
 import { Link } from "react-router-dom";
+import Notiflix from "notiflix";
+import { singleProductAr } from "../../date/date";
 
 interface Lang {
   td1: string;
@@ -74,6 +76,18 @@ function Booking() {
     }
   }
 
+  const alert = () => {
+    let message = "";
+    {
+      language.uzb
+        ? (message = singleProductAr.bookru)
+        : language.rus
+        ? (message = singleProductAr.bookrr)
+        : (message = singleProductAr.bookre);
+    }
+    Notiflix.Notify.success(message);
+  };
+
   return (
     <>
       <h1 className="text">{lang.h1}</h1>
@@ -92,7 +106,7 @@ function Booking() {
               <tr key={item.id}>
                 <td>
                   <button onClick={() => hendleRemove(item.id)}>
-                    <i className="far fa-times-circle"></i>
+                    <i onClick={alert} className="far fa-times-circle"></i>
                   </button>
                 </td>
                 <td>

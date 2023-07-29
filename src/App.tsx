@@ -23,6 +23,7 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Checkout" element={<CheckOut />} />
+        <Route path="/Booking" element={<Booking />} />
       </Routes>
       <Footer />
     </>

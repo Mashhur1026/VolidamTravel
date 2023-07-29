@@ -20,6 +20,11 @@ export const navArray = {
       name: "Bog'lansh",
       link: "/Contact",
     },
+    {
+      id: 4,
+      name: "Bron",
+      link: "/Booking",
+    },
   ],
 
   rus: [
@@ -43,6 +48,11 @@ export const navArray = {
       name: "Контакт",
       link: "/Contact",
     },
+    {
+      id: 4,
+      name: "Бронирование",
+      link: "/Booking",
+    },
   ],
 
   eng: [
@@ -65,6 +75,11 @@ export const navArray = {
       id: 3,
       name: "Contact",
       link: "/Contact",
+    },
+    {
+      id: 4,
+      name: "Booking",
+      link: "/Booking",
     },
   ],
 };
@@ -862,6 +877,21 @@ export const singleProductAr = {
   h4u: "Mahsulot tafsilotlari",
   h4e: "Product Details",
   h4r: "Информация о Продуктe",
+  messageu: "Tur paket savatga qo'shld",
+  messager: "Пакет добавлен в корзину",
+  messagee: "The package has been added to the cart",
+  messageWorningu: "Tur paket allaqacon savatda",
+  messageWorningr: "Пакет уже в корзине",
+  messageWorninge: "The package is already in the shopping cart",
+  mremoveu: "Tur paket o'chrild",
+  mremovee: "The tour package has been deleted",
+  mremover: "Турпакет удален.",
+  booku: "Tur paket bron qilindi",
+  booke: "The tour package has been booked",
+  bookr: "Турпакет забронирован",
+  bookru: "Tur paket bron qilishdan olib tashlandi",
+  bookrr: "Тур удален из пакетного бронирования",
+  bookre: "The tour has been removed from the package booking",
 };
 // Sm-Banner
 export const smArray = {

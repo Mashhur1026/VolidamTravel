@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import DataContext, { CartItem } from "../../DataContext";
 import { singleProductAr } from "../../date/date";
+import Notiflix from "notiflix";
 import "./singlePage.css";
 
 function SinglePage() {
@@ -34,6 +35,15 @@ function SinglePage() {
         imgUrl: singleProductUse.imgUrl,
       };
       contextValue?.singleAddCard?.(newItem);
+      let message = "";
+      {
+        language.uzb
+          ? (message = singleProductAr.messageu)
+          : language.rus
+          ? (message = singleProductAr.messager)
+          : (message = singleProductAr.messagee);
+      }
+      Notiflix.Notify.success(message);
     }
   };
 
@@ -54,7 +64,6 @@ function SinglePage() {
 
       <div className="single-pro-details">
         <h6>
-          {" "}
           {language.uzb
             ? singleProductAr.h6u
             : language.rus
