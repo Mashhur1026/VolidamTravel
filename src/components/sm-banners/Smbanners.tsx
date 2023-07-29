@@ -1,36 +1,51 @@
+import { useContext } from "react";
 import "./smbanners.css";
+import DataContext from "../../DataContext";
+import { bannerArray, smArray } from "../../date/date";
+
+interface Prop {
+  id: number;
+  h4: string;
+  h2: string;
+  span: string;
+}
+
+interface Prop2 {
+  id: number;
+  h4: string;
+  h2: string;
+}
 
 function Smbanners() {
+  const contextValue = useContext(DataContext);
+  if (!contextValue) {
+    throw new Error("Context is not defined");
+  }
+
+  const { check } = contextValue;
+
   return (
     <>
       <section id="sm-banner">
-        <div className="banner-box">
-          <h4>crazy deals</h4>
-          <h2>buy 1 get 1 free</h2>
-          <span>The best classic dress in on sale at care</span>
-          <button>Learn More</button>
-        </div>
-        <div className="banner-box banner-box2">
-          <h4>spring / summer</h4>
-          <h2>buy 1 get 1 free</h2>
-          <span>The best classic dress in on sale at care</span>
-          <button>Collection</button>
-        </div>
+        {check(smArray).map((smbanner: Prop) => (
+          <>
+            <div key={smbanner.id} className="banner-box">
+              <h4>{smbanner.h4}</h4>
+              <h2>{smbanner.h2}</h2>
+              <span>{smbanner.span}</span>
+            </div>
+          </>
+        ))}
       </section>
-      {/* Smoll Bnners */}
       <section id="banner3">
-        <div className="banner-box">
-          <h2>SEASONAL SALE</h2>
-          <h3>Winter Collection -50% OFF</h3>
-        </div>
-        <div className="banner-box banner-box2">
-          <h2>SEASONAL SALE</h2>
-          <h3>Winter Collection -50% OFF</h3>
-        </div>
-        <div className="banner-box banner-box3">
-          <h2>SEASONAL SALE</h2>
-          <h3>Winter Collection -50% OFF</h3>
-        </div>
+        {check(bannerArray).map((banner: Prop2) => (
+          <>
+            <div key={banner.id} className="banner-box">
+              <h2>{banner.h4}</h2>
+              <h3>{banner.h2}</h3>
+            </div>
+          </>
+        ))}
       </section>
     </>
   );

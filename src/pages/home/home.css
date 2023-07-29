@@ -1,5 +1,5 @@
 #hero {
-  background-image: url(https://res.cloudinary.com/dmu4nnfdg/image/upload/v1690502803/abnnerhome_exkq5k.jpg);
+  background-image: url(https://res.cloudinary.com/dmu4nnfdg/image/upload/v1690592735/bg_mbqt9e.jpg);
   height: 90vh;
   width: 100%;
   background-size: cover;
@@ -14,37 +14,43 @@
 #hero h4 {
   padding-bottom: 15px;
   font-size: 20px;
-  color: #222;
+  color: #fff;
 }
 
 #hero h2 {
   font-size: 46px;
   line-height: 54px;
-  color: #222;
+  color: #088178;
 }
 
 #hero h1 {
-  color: #088178;
+  color: #fff;
   font-size: 50px;
   line-height: 64px;
 }
 
 #hero p {
   font-size: 16px;
-  color: #465b52;
+  color: #fff;
   margin: 15px 0 20px 0;
 }
 
-#hero button {
-  background-image: url(../../assets/button.png);
-  background-color: transparent;
-  color: #088178;
-  border: none;
-  padding: 14px 80px 14px 65px;
-  background-repeat: no-repeat;
+#hero a {
+  background-color: #89d7e661;
+  color: #fff;
+  border: 1px solid #89d7e6;
+  padding: 14px 28px;
   cursor: pointer;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 17px;
+  text-decoration: none;
+}
+
+#hero a:hover {
+  background-color: transparent;
+  color: #89d7e6;
+  border: 2px solid #89d7e6;
+  font-weight: 800;
 }
 
 @media (max-width: 799px) {
@@ -74,9 +80,9 @@
   #hero p {
     font-size: 13px;
   }
-  #hero button {
-    padding: 14px 38px 10px 65px;
+  #hero a {
+    padding: 10px 20px;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 14px;
   }
 }

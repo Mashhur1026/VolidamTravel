@@ -11,6 +11,15 @@ export interface CartItem {
   imgUrl: string[];
 }
 
+export interface ProductArray {
+  id: number;
+  category: string;
+  imgUrl: string[];
+  people: string;
+  name: string;
+  price: number;
+}
+
 interface DataContextValue {
   cartItems: CartItem[];
   removeItem: (newItem: CartItem) => void;
@@ -68,16 +77,11 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const singleAddCard = (newItem: CartItem) => {
-    // Check if the item already exists in the cartItems array
     const itemExists = cartItems.some((item) => item.id === newItem.id);
-
-    // If the item exists, do not add it again
     if (itemExists) {
       console.log("Item already exists in the cart.");
       return;
     }
-
-    // If the item does not exist, add it to the cartItems array
     setCartItems((prevCartItems) => [...prevCartItems, newItem]);
   };
 

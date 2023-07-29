@@ -13,8 +13,8 @@ interface Lang {
   td3: string;
   h3: string;
   total: string;
-
   mbtn: string;
+  mbtn2: string;
 }
 
 function Cart() {
@@ -38,13 +38,14 @@ function Cart() {
     h3: "",
     total: "",
     mbtn: "",
+    mbtn2: "",
   });
 
   useEffect(() => {
     if (language.uzb) {
       setLang({
         title: "#E'tibor",
-        text: "Iltimos, barcha narsalarni diqqat bilan tekshang",
+        text: "Iltimos, barcha narsalarni diqqat bilan tekshiring",
         img: "about-bg",
         td1: "Rasm",
         td2: "Ism",
@@ -52,6 +53,7 @@ function Cart() {
         h3: "Savat jami",
         total: "Jami",
         mbtn: "To'lovga o'tish",
+        mbtn2: "Bron qilish",
       });
     } else if (language.eng) {
       setLang({
@@ -64,6 +66,7 @@ function Cart() {
         h3: "Cart Total",
         total: "Total",
         mbtn: "Proceed to Payment",
+        mbtn2: "Book",
       });
     } else {
       setLang({
@@ -76,6 +79,7 @@ function Cart() {
         h3: "Общая сумма в корзине",
         total: "Итого",
         mbtn: "Перейти к оплате",
+        mbtn2: "Бронирование",
       });
     }
   }, [language]);
@@ -128,9 +132,14 @@ function Cart() {
               </tr>
             </tbody>
           </table>
-          <Link to={`/Checkout`}>
-            <button className="normol">{lang.mbtn}</button>
-          </Link>
+          <div className="btn-container">
+            <Link to={`/Checkout`}>
+              <button className="normol">{lang.mbtn}</button>
+            </Link>
+            <Link to={`/Booking`}>
+              <button className="normol">{lang.mbtn2}</button>
+            </Link>
+          </div>
         </div>
       </section>
     </>

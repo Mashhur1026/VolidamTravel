@@ -94,6 +94,7 @@
   border: none;
   outline: none;
   transition: 0.2s;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 750px) {

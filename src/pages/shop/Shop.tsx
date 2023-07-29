@@ -28,19 +28,19 @@ function Shop() {
       setLang({
         title: "#Uyda Qoling",
         text: "Uyingizdan turib xarid qiling va bron qiling",
-        img: "shop-bg",
+        img: "about-bg",
       });
     } else if (language.eng) {
       setLang({
         title: "#stayhome",
         text: "Buy and Book from the Comfort of Your Home",
-        img: "shop-bg",
+        img: "about-bg",
       });
     } else {
       setLang({
         title: "#Остаться дома",
         text: "Покупайте и бронируйте, не выходя из дома",
-        img: "shop-bg",
+        img: "about-bg",
       });
     }
   }, [language]);

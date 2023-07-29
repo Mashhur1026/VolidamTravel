@@ -6,6 +6,7 @@ import Smbanners from "../../components/sm-banners/Smbanners";
 import { homeArray } from "../../date/date";
 import { useContext } from "react";
 import DataContext from "../../DataContext";
+import { Link } from "react-router-dom";
 
 function Home() {
   const contextValue = useContext(DataContext);
@@ -45,13 +46,13 @@ function Home() {
             ? homeArray.homePRu
             : homeArray.homePEng}
         </p>
-        <button>
+        <Link to={`/Shop`}>
           {language.uzb
             ? homeArray.btnu
             : language.rus
             ? homeArray.btnr
             : homeArray.btne}
-        </button>
+        </Link>
       </section>
       <Categories />
       <Products />

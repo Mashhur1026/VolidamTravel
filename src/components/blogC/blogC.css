@@ -9,20 +9,8 @@
   padding: 14px;
 }
 
-.shop-bg {
-  background-image: url(../../assets/banner/b1.jpg);
-}
-
-.blog-bg {
-  background-image: url(../../assets/banner/b19.jpg);
-}
-
 .about-bg {
-  background-image: url(../../assets/about/banner.png);
-}
-.cargo-bg {
-  background-image: url(../../assets/banner/cargo2.jpeg);
-  background-position: center;
+  background-image: url(https://res.cloudinary.com/dmu4nnfdg/image/upload/v1690594166/banner_uuecsg.png);
 }
 
 #page-header h2 {

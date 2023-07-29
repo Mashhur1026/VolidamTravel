@@ -3,6 +3,7 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 40px 40px;
+  background: #e3e6f3;
 }
 
 footer .col {
@@ -38,13 +39,14 @@ footer .follow {
   margin-top: 20px;
 }
 
-footer .follow i {
+footer .follow a {
   color: #465b52;
   padding-right: 4px;
   cursor: pointer;
+  font-size: 20px;
 }
 
-footer .follow i:hover,
+footer .follow a:hover,
 footer a:hover {
   color: #088178;
 }
@@ -55,7 +57,8 @@ footer .install .row img {
 }
 
 footer .install img {
-  margin: 10px 0 15px 0;
+  width: 100px;
+  height: 100px;
 }
 
 footer .copyright {
@@ -76,6 +79,18 @@ footer .copyright {
 @media (max-width: 477px) {
   footer .col {
     margin: 0px 20px 30px 20px;
+  }
+
+  .text {
+    font-size: 20px;
+  }
+
+  .elon h3 {
+    font-size: 15px;
+  }
+
+  footer .col:first-child {
+    margin-top: 20px;
   }
 
   footer p {

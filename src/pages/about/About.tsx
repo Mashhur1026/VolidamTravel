@@ -36,10 +36,10 @@ function About() {
         h2: "Biz Kimmiz",
         p1: `Volidam Sayohat Agentligiga Xush kelibsiz!
 
-Volidam Sayohat Agentligi sifatida, biz mijozlarimiz uchun unutulmaz sayohat tajribalari yaratishga qiziqaymiz. Yangi va dinamik sayohat agentligi sifatida, bizning maqsadimiz O'zbekistonning hayratlanadigan yo'llarini va boshqa chiroyli va mashhur mamlakatlarni o'rganishingizga yordam berishdir.`,
-        p2: `Bizning jamoamiz ishtirokchilar bir qator sayohat hayratparastlardan iborat, ular sizning xususiy talablaringiz va qiziqishlaringizga mos xizmat qiluvchi mo'ljallangan marşrutlar yaratishda yaxshi tushunadi. Siz O'zbekistonning qadimiy shaharlarida madaniy bog'lanish, hayratlanarli manzaralar bilan sog'inchli yurish, yoki troplik qirg'izmasidan dengiz pljajiga o'tishni izlayotsizmi - bizning daftarchamizda hech qachon yo'q.
+Volidam Sayohat Agentligi sifatida, biz mijozlarimiz uchun unutulmas sayohat tajribalari yaratishga rarakat qiziqaymiz. Yangi va dinamik sayohat agentligi sifatida, bizning maqsadimiz O'zbekistonning hayratlanadigan yo'llarini va boshqa chiroyli va mashhur mamlakatlarni o'rganishingizga yordam berishdir.`,
+        p2: `Bizning jamoamiz ishtirokchilar bir qator sayohat hayratparastlardan iborat, ular sizning xususiy talablaringiz va qiziqishlaringizga mos keladgan maxsus tur paketlar yaratishda yordam beradlar. Siz O'zbekistonning qadimiy shaharlarida madaniy bog'lanish, hayratlanarli manzaralar bilan sog'inchli yurish, yoki truproq qirg'izmasidan dengiz plyajga o'tishni izlamapsizmi - unda biz sizga shu taklifni beramz .
 
-Tafsilotlariga to'g'ri e'tibor berish va sifatga bo'lgan ta'commit bilan, biz har bir sayohatingizning har bir qismiga qayg'ilanishni ta'minlaymiz, sizni bir oz qayg'usiz sayohatga qo'yishimizni ta'minlaymiz. Parvoz qilish va joylashtirishdan, mahalliy turlar va tajriba tadbirlarini tashkil qilishgacha - biz hepsini boshqarib, sizga har bir kundalik e'tiroz va bezak xotiralar yaratishga vaqtingizni beramiz.`,
+Tafsilotlariga to'g'ri e'tibor berish va sifatga bo'lgan etibor bilan, biz har bir sayohatingizning har bir qismi betakror o'tishin ta'minlaymiz, sizni qayg'usiz sayohat bilan ta'minlaymiz. Parvoz qilish va joylashtirishdan, mahalliy turlar va tajriba tadbirlarini tashkil qilishgacha - biz boynimizga olamiz.`,
       });
     } else if (language.eng) {
       setLang({

@@ -87,6 +87,12 @@
   padding: 10px;
 }
 
+.btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 #subtotal button {
   background-color: #088178;
   color: #fff;

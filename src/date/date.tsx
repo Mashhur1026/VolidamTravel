@@ -863,3 +863,101 @@ export const singleProductAr = {
   h4e: "Product Details",
   h4r: "Информация о Продуктe",
 };
+// Sm-Banner
+export const smArray = {
+  eng: [
+    {
+      id: 0,
+      h4: "crazy deals",
+      h2: "buy 1 get 20% off for second",
+      span: "Discover the ultimate travel adventure with our exclusive tour packages!",
+    },
+    {
+      id: 1,
+      h4: "special offer",
+      h2: "up to 5% off on all tours",
+      span: "Experience the world's most breathtaking destinations with our exclusive tour packages!",
+    },
+  ],
+  rus: [
+    {
+      id: 0,
+      h4: "сумасшедшие предложения",
+      h2: "купите 1 и получите второй со скидкой 20%",
+      span: "Откройте для себя уникальные туристические приключения с нашими эксклюзивными турпакетами!",
+    },
+    {
+      id: 1,
+      h4: "специальное предложение",
+      h2: "скидка до 5% на все туры",
+      span: "Познайте самые захватывающие места на планете с нашими эксклюзивными турпакетами!",
+    },
+  ],
+  uzb: [
+    {
+      id: 0,
+      h4: "go'zal takliflar",
+      h2: "birini sotib oling, ikkinchisiga 20% chegirma",
+      span: "Eng yaxshi sayohatlarni bizning maxsus turpaketalarimizdan toping",
+    },
+    {
+      id: 1,
+      h4: "maxsus taklif",
+      h2: "barcha turlarga 5% gacha chegirma",
+      span: "Bizning maxsus turpaketalarmiz bilan eng yaxshi joylarni ko'ring!",
+    },
+  ],
+};
+export const bannerArray = {
+  uzb: [
+    {
+      id: 0,
+      h4: "MISR TUR",
+      h2: "Maxsus Siz Uchun -5%",
+    },
+    {
+      id: 1,
+      h4: "ISPANIYA TUR",
+      h2: "Maxsus Siz Uchun -6%",
+    },
+    {
+      id: 1,
+      h4: "AUSTRALIA TUR",
+      h2: "Maxsus Siz Uchun -3%",
+    },
+  ],
+  rus: [
+    {
+      id: 0,
+      h4: "ТУР В ЕГИПЕТ",
+      h2: "Специально для Вас -5%",
+    },
+    {
+      id: 1,
+      h4: "ТУР В ИСПАНИЮ",
+      h2: "Специально для Вас -6%",
+    },
+    {
+      id: 1,
+      h4: "ТУР В АВСТРАЛИЮ",
+      h2: "Специально для Вас -3%",
+    },
+  ],
+  eng: [
+    {
+      id: 0,
+      h4: "EGYPT TOUR",
+      h2: "Exclusive for You -5%",
+    },
+    {
+      id: 1,
+      h4: "SPAIN TOUR",
+      h2: "Exclusive for You -6%",
+    },
+    {
+      id: 1,
+      h4: "AUSTRALIA TOUR",
+      h2: "Exclusive for You -3%",
+    },
+  ],
+};
