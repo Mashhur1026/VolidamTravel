@@ -862,7 +862,7 @@ For free consultation and booking, contact us at:+998913105555`,
 };
 
 export const productArray2 = {
-  pu: "Bizning ajoyin tur paketlarmiz",
+  pu: "Bizning ajoyib tur paketlarmiz",
   pr: "Наши потрясающие турпакеты",
   pe: "Our amazing tour packages",
 };

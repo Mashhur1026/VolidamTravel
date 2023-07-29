@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: flex-start;
-  background-image: url("https://res.cloudinary.com/dmu4nnfdg/image/upload/v1690591742/travel_cxgs8q.jpg");
+  background-image: url("https://res.cloudinary.com/dmu4nnfdg/image/upload/v1690638654/new_d5xuct.jpg");
   min-width: 580px;
   height: 50vh;
   background-size: cover;
@@ -23,21 +23,21 @@
 }
 
 #sm-banner .banner-box:nth-child(2) {
-  background-image: url("https://res.cloudinary.com/dmu4nnfdg/image/upload/v1690591741/barch_egdmey.webp");
+  background-image: url("https://res.cloudinary.com/dmu4nnfdg/image/upload/v1690638654/barch_whzipl.jpg");
 }
 
 #sm-banner h4 {
   color: #fff;
   font-size: 20px;
   font-weight: 300;
-  background-color: rgba(42, 42, 42, 0.271);
+  background-color: rgba(42, 42, 42, 0.475);
 }
 
 #sm-banner h2 {
   color: #fff;
   font-size: 28px;
   font-weight: 800;
-  background-color: rgba(42, 42, 42, 0.271);
+  background-color: rgba(42, 42, 42, 0.475);
 }
 
 #sm-banner span {
@@ -45,7 +45,7 @@
   font-size: 14px;
   font-weight: 500;
   padding-bottom: 15px;
-  background-color: rgba(42, 42, 42, 0.271);
+  background-color: rgba(42, 42, 42, 0.475);
 }
 
 /* Banner3 */
