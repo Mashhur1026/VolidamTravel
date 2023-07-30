@@ -17,6 +17,8 @@ interface Lang {
   total: string;
   mbtn: string;
   mbtn2: string;
+  btn: string;
+  m: string;
 }
 
 function Cart() {
@@ -58,6 +60,8 @@ function Cart() {
     total: "",
     mbtn: "",
     mbtn2: "",
+    btn: "",
+    m: "",
   });
 
   useEffect(() => {
@@ -73,6 +77,8 @@ function Cart() {
         total: "Jami",
         mbtn: "To'lovga o'tish",
         mbtn2: "Bron qilish",
+        btn: "Tur paketlar",
+        m: "Sizning savatinggizda hechqanday Tur paket yo'q",
       });
     } else if (language.eng) {
       setLang({
@@ -86,6 +92,8 @@ function Cart() {
         total: "Total",
         mbtn: "Proceed to Payment",
         mbtn2: "Book",
+        btn: "Tour packages ",
+        m: "There are no Tour packages in your shopping cart",
       });
     } else {
       setLang({
@@ -99,6 +107,8 @@ function Cart() {
         total: "Итого",
         mbtn: "Перейти к оплате",
         mbtn2: "Бронирование",
+        btn: "Турпакеты",
+        m: "В вашей корзине нет турпакетов",
       });
     }
   }, [language]);
@@ -117,64 +127,125 @@ function Cart() {
 
   return (
     <>
-      <BlogComponent title={lang.title} text={lang.text} img={lang.img} />
-      <section id="cart">
-        <table width="100%">
-          <thead>
-            <tr>
-              <td></td>
-              <td>{lang.td1}</td>
-              <td>{lang.td2}</td>
-              <td>{lang.td3}</td>
-            </tr>
-          </thead>
-          <tbody>
-            {cartItems.map((item) => (
-              <tr key={item.id}>
-                <td>
-                  <button onClick={() => removeItem?.(item)}>
-                    <i className="far fa-times-circle"></i>
+      {cartItems.length === 0 ? (
+        <>
+          <BlogComponent title={lang.title} text={lang.text} img={lang.img} />
+          <section id="cart">
+            <table width="100%">
+              <thead>
+                <tr>
+                  <td></td>
+                  <td>{lang.td1}</td>
+                  <td>{lang.td2}</td>
+                  <td>{lang.td3}</td>
+                </tr>
+              </thead>
+              <tbody>
+                {cartItems.map((item) => (
+                  <tr key={item.id}>
+                    <td>
+                      <button onClick={() => removeItem?.(item)}>
+                        <i className="far fa-times-circle"></i>
+                      </button>
+                    </td>
+                    <td>
+                      <img src={item.imgUrl[0]} alt="" />
+                    </td>
+                    <td>{item.name}</td>
+
+                    <td>{item.price} UZS</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </section>
+
+          <section id="cart-add">
+            <div id="subtotal">
+              <h3>{lang.h3}</h3>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <strong>{lang.total}</strong>
+                    </td>
+                    <td>
+                      <strong>{total} UZS</strong>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div className="btn-container">
+                <h2>{lang.m}</h2>
+                <Link to={`/Shop`}>
+                  <button className="normol"> {lang.btn}</button>
+                </Link>
+              </div>
+            </div>
+          </section>
+        </>
+      ) : (
+        <>
+          <BlogComponent title={lang.title} text={lang.text} img={lang.img} />
+          <section id="cart">
+            <table width="100%">
+              <thead>
+                <tr>
+                  <td></td>
+                  <td>{lang.td1}</td>
+                  <td>{lang.td2}</td>
+                  <td>{lang.td3}</td>
+                </tr>
+              </thead>
+              <tbody>
+                {cartItems.map((item) => (
+                  <tr key={item.id}>
+                    <td>
+                      <button onClick={() => removeItem?.(item)}>
+                        <i className="far fa-times-circle"></i>
+                      </button>
+                    </td>
+                    <td>
+                      <img src={item.imgUrl[0]} alt="" />
+                    </td>
+                    <td>{item.name}</td>
+
+                    <td>{item.price} UZS</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </section>
+
+          <section id="cart-add">
+            <div id="subtotal">
+              <h3>{lang.h3}</h3>
+              <table>
+                <tbody>
+                  <tr>
+                    <td>
+                      <strong>{lang.total}</strong>
+                    </td>
+                    <td>
+                      <strong>{total} UZS</strong>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div className="btn-container">
+                <Link to={`/Checkout`}>
+                  <button className="normol">{lang.mbtn}</button>
+                </Link>
+                <Link onClick={alert} to={`/Booking`}>
+                  <button onClick={hendleClik} className="normol">
+                    {lang.mbtn2}
                   </button>
-                </td>
-                <td>
-                  <img src={item.imgUrl[0]} alt="" />
-                </td>
-                <td>{item.name}</td>
-
-                <td>{item.price} UZS</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </section>
-
-      <section id="cart-add">
-        <div id="subtotal">
-          <h3>{lang.h3}</h3>
-          <table>
-            <tbody>
-              <tr>
-                <td>
-                  <strong>{lang.total}</strong>
-                </td>
-                <td>
-                  <strong>{total} UZS</strong>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div className="btn-container">
-            <Link to={`/Checkout`}>
-              <button className="normol">{lang.mbtn}</button>
-            </Link>
-            <Link onClick={alert} to={`/Booking`}>
-              <button onClick={hendleClik} className="normol">
-                {lang.mbtn2}
-              </button>
-            </Link>
-          </div>
-        </div>
-      </section>
+                </Link>
+              </div>
+            </div>
+          </section>
+        </>
+      )}
     </>
   );
 }
