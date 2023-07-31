@@ -91,6 +91,11 @@
   right: 10px;
 }
 
+#product1 .pro button {
+  border: none;
+  background-color: transparent;
+}
+
 @media (max-width: 999px) {
   #product1 {
     padding: 20px 40px;
