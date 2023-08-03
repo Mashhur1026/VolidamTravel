@@ -8,6 +8,7 @@ export interface CartItem {
   people: string;
   price: number;
   category: string;
+  quantity: number;
   description: string;
   imgUrl: string[];
 }
@@ -18,6 +19,7 @@ export interface ProductArray {
   imgUrl: string[];
   people: string;
   name: string;
+  quantity: number;
   price: number;
 }
 
@@ -54,7 +56,10 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   });
 
   useEffect(() => {
-    const newTotal = cartItems.reduce((acc, item) => acc + item.price, 0);
+    const newTotal = cartItems.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
+    );
     setTotal(newTotal);
   }, [cartItems]);
 
@@ -87,20 +92,22 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   const singleAddCard = (newItem: CartItem) => {
-    const itemExists = cartItems.some((item) => item.id === newItem.id);
-    if (itemExists) {
-      let message = "";
-      {
-        language.uzb
-          ? (message = singleProductAr.messageWorningu)
-          : language.rus
-          ? (message = singleProductAr.messageWorningr)
-          : (message = singleProductAr.messageWorninge);
-      }
-      Notiflix.Notify.warning(message);
-      return;
+    const itemExists = cartItems.filter((item) => item.id === newItem.id);
+    if (itemExists.length > 0) {
+      itemExists[0].quantity++;
+      setCartItems((prev) => {
+        const updatedItems = prev.map((item) => {
+          if (item.id === newItem.id) {
+            return itemExists[0];
+          } else {
+            return item;
+          }
+        });
+        return updatedItems;
+      });
+    } else {
+      setCartItems((prevCartItems) => [...prevCartItems, newItem]);
     }
-    setCartItems((prevCartItems) => [...prevCartItems, newItem]);
   };
 
   useEffect(() => {

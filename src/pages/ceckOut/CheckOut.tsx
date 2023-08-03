@@ -14,6 +14,7 @@ interface Lang {
   td1: string;
   td2: string;
   td3: string;
+  td4: string;
   h3: string;
   total: string;
   mspan: string;
@@ -23,6 +24,8 @@ interface Lang {
   ph2: string;
   ph3: string;
   ph4: string;
+  c: string;
+  e: string;
 }
 
 function CheckOut() {
@@ -50,6 +53,9 @@ function CheckOut() {
     ph2: "",
     ph3: "",
     ph4: "",
+    td4: "",
+    c: "",
+    e: "",
   });
 
   const [formValues, setFormValues] = useState<FormValues>({
@@ -92,6 +98,9 @@ function CheckOut() {
         ph2: "Familiya",
         ph3: "Telefon raqam",
         ph4: "Xabar",
+        td4: "Miqdor",
+        c: "Card number",
+        e: "Kartaning amal qilish muddati",
       });
     } else if (language.eng) {
       setLang({
@@ -107,7 +116,10 @@ function CheckOut() {
         ph1: "Name",
         ph2: "Surname",
         ph3: "Number",
+        td4: "Amount",
         ph4: "Message",
+        c: "Karta raqami",
+        e: "Expiry date of card ",
       });
     } else {
       setLang({
@@ -124,6 +136,9 @@ function CheckOut() {
         ph2: "Фамилия",
         ph3: "Номер",
         ph4: "Сообщение",
+        td4: "Сумма",
+        c: "Номер карты",
+        e: "Срок действия карты",
       });
     }
   }, [language]);
@@ -137,6 +152,7 @@ function CheckOut() {
             <tr>
               <td>{lang.td1}</td>
               <td>{lang.td2}</td>
+              <td>{lang.td4}</td>
               <td>{lang.td3}</td>
             </tr>
           </thead>
@@ -147,6 +163,7 @@ function CheckOut() {
                   <img src={item.imgUrl[0]} alt="" />
                 </td>
                 <td>{item.name}</td>
+                <td>{item.quantity}</td>
                 <td>{item.price} UZS</td>
               </tr>
             ))}
@@ -163,7 +180,7 @@ function CheckOut() {
                   <strong>{lang.total}</strong>
                 </td>
                 <td>
-                  <strong>${total}</strong>
+                  <strong>{total} UZS</strong>
                 </td>
               </tr>
             </tbody>
@@ -194,6 +211,24 @@ function CheckOut() {
             placeholder={lang.ph3}
             name="telefon"
             type="tel"
+            required
+          />
+          <label htmlFor="card">{lang.c}</label>
+          <input
+            onChange={handleChange}
+            placeholder="8600 000000000000"
+            name="card"
+            type="number"
+            id="card"
+            required
+          />
+          <label htmlFor="expDate">{lang.e}</label>
+          <input
+            onChange={handleChange}
+            placeholder="24/08"
+            name="expDate"
+            type="text"
+            id="expDate"
             required
           />
           <textarea

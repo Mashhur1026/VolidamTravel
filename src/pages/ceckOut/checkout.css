@@ -84,6 +84,10 @@
   padding: 20px 0;
 }
 
+#checkout-form-details form label {
+  margin-bottom: 10px;
+}
+
 #checkout-form-details form input,
 #checkout-form-details form textarea {
   width: 100%;
@@ -131,10 +135,6 @@
 }
 
 @media (max-width: 570px) {
-  #chechout {
-    padding: 20px;
-  }
-
   #chechout table tbody td {
     font-size: 10px;
   }

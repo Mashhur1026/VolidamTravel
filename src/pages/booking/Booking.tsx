@@ -13,6 +13,7 @@ interface Lang {
   mbtn: string;
   h12: string;
   btn: string;
+  td4: string;
 }
 
 function Booking() {
@@ -38,6 +39,7 @@ function Booking() {
     mbtn: "",
     h12: "",
     btn: "",
+    td4: "",
   });
 
   useEffect(() => {
@@ -50,6 +52,7 @@ function Booking() {
         mbtn: "To'lovga o'tish",
         h12: "Siz hali hech qanday tur paketini band qilmagansiz",
         btn: "Tur paketlar",
+        td4: "Miqdor",
       });
     } else if (language.eng) {
       setLang({
@@ -60,6 +63,7 @@ function Booking() {
         mbtn: "Proceed to Payment",
         h12: "You have not booked any tour packages yet",
         btn: "Tour packages ",
+        td4: "Amount",
       });
     } else {
       setLang({
@@ -70,6 +74,7 @@ function Booking() {
         mbtn: "Перейти к оплате",
         h12: "Вы еще не забронировали турпакеты",
         btn: "Турпакеты",
+        td4: "Сумма",
       });
     }
   }, [language]);
@@ -119,6 +124,7 @@ function Booking() {
                   <td></td>
                   <td>{lang.td1}</td>
                   <td>{lang.td2}</td>
+                  <td>{lang.td4}</td>
                   <td>{lang.td3}</td>
                 </tr>
               </thead>
@@ -134,7 +140,7 @@ function Booking() {
                       <img src={item.imgUrl[0]} alt="" />
                     </td>
                     <td>{item.name}</td>
-
+                    <td>{item.quantity}</td>
                     <td>{item.price} UZS</td>
                   </tr>
                 ))}

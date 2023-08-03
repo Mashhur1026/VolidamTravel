@@ -163,6 +163,7 @@ export const productArray = {
       name: "Xorazm",
       people: "1ta odam",
       price: 1200000,
+      quantity: 1,
       category: "Uzbekiston",
       description: `Xarazm, O'zbekiston uchun yangi tur paketini taqdim etamiz!
 
@@ -178,6 +179,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Samarqand",
       people: "1ta odam",
       price: 1500000,
+      quantity: 1,
       description: `Samarqand, O'zbekiston uchun yangi tur paketini taqdim etamiz!
 
 O'zbekistonning zarafshon madaniy markaziga yangi sayohat paketimiz bilan qo'shiling. Samarqand shahri mamlakatimizning zamonaviy va tarixiy joylaridan biridir. Shaxsiy sayohat uchun eng zo'r joylardan birini tanlash uchun yaxshi imkoniyat!
@@ -206,6 +208,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Toshkent",
       people: "1ta odam",
       price: 800000,
+      quantity: 1,
       description: `Toshkent, O'zbekistonning bosh shahri va madaniy markaziga yangi sayohat paketimiz bilan qo'shiling.
 
 Toshkentni tanishing:
@@ -229,6 +232,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Buxoro",
       people: "1ta odam",
       price: 1000000,
+      quantity: 1,
       description: `Buxoro, O'zbekistonning zamonaviy tarixiy markaziga yangi sayohat paketimiz bilan qo'shiling.
 
 Buxoro shahrida sayohatni boshlash uchun ajoyib imkoniyatlar:
@@ -253,6 +257,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Surxondaryo",
       people: "1ta odam",
       price: 750000,
+      quantity: 1,
       description: `Surxondaryo, O'zbekiston uchun yangi tur paketini taqdim etamiz!
 
 Surxondaryoga yangi qiziqarli sayohat paketimiz bilan O'zbekistonning janubiy qismiga unutilmas sayohatga chiqing. Mamlakatning g'arbiy qismida joylashgan Surxondaryo boy tarixga, hayratlanarli tabiat manzaralarga va jonli madaniy merosga boy hududdir. Keling, ushbu ajoyib sayohatning diqqatga sazovor joylarini ko'rib chiqaylik:
@@ -267,6 +272,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Fergana",
       people: "1ta odam",
       price: 850000,
+      quantity: 1,
       description: `Fergana, O'zbekiston uchun yangi tur paketini taqdim etamiz!
 
 Ferganaga yangi qiziqarli sayohat paketimiz bilan O'zbekistonning shumlarini ko'rib chiqing. Mamlakatning sharqiy qismida joylashgan Fergana boy tarixga, hayratlanarli tabiat manzaralarga va ajoyib madaniy merosga boy hududdir. Keling, ushbu ajoyib sayohatning diqqatga sazovor joylarini ko'rib chiqaylik:
@@ -281,6 +287,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Fransiya",
       people: "1 nafar odam",
       price: 2000000,
+      quantity: 1,
       description: `Parizning romantik ko'chalarini ko'rib chiqing, Eiffel toronyi nishoniga chiqing, Fransuz taomlarini mazaqlang va Fransiyaning bog'bon madaniyatiga daldiring. Bu sayohat paketi Fransiyada eng mashhur ob'yektlarning g'oyaviy sayohatiga aylanish imkonini beradi.
 Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       imgUrl: [
@@ -294,6 +301,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Italiya",
       people: "1 nafar odam",
       price: 1800000,
+      quantity: 1,
       description:
         "Italiyaning zarafatini tadqiq qiling. Roma shahridagi tarixiy ob'yektlarni kuzating, Firenzadagi san'at va arxitekturaga hayratlaning, Venetsiyada manzarali kanallarda sudring va Italiyaning nozik taomlarini mazzaqlang. Italiyaning eng mashhur shaharlarida sayohat sizni kutmoqda! Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555",
       imgUrl: [
@@ -307,6 +315,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Yaponiya",
       people: "1 nafar odam",
       price: 2300000,
+      quantity: 1,
       description:
         "Yaponiyada qadimgi traditsiyalarni va zamonaviy innovatsiyalarni birlashtiruvchi o'ziga xos atmosferasini toping. Tokyodagi guvohlar shahriga tashrif buyuring, Kyoto shahridagi qadimiy obidalarini ziyorat qiling, ikonik Fuji tog'ini ko'ring va asl Yapon taomlarini taqlid qiling. Bu sayohat paketi Quyoshning Chiqishi davlatida unutulmaz sayohat va'da qiladi. Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555",
       imgUrl: [
@@ -319,6 +328,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Misr",
       people: "1 nafar odam",
       price: 1500000,
+      quantity: 1,
       description:
         "Misrga hayron bo'lingan sayohatga chiqing va uning qadimiy ajoyiblarini kashf qiling. Gizaning hayron qiluvchi piramidalari, Nil daryosi bo'yicha sayohat qiling, Luksozdagi haykal qal'alarini toping va Qohiradagi jonli madaniyatini tajribalaing. Bu sayohat paketi faroqlar diyorida unutulmaz bir sayohat va'da qiladi. Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555",
       imgUrl: [
@@ -331,6 +341,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Ispaniya",
       people: "1 nafar odam",
       price: 1700000,
+      quantity: 1,
       description:
         "Ispaniyaning turli sohalarini ushlashingizga imkon beruvchi bu sayohat paketida yo'lingizni toping. Baruselonadagi tarixiy ko'chalar orasida bo'ring, Madriddagi arxitektura mo'jizalariga ajoyibroq ko'ring, Costa del Solning quyoshli sahillaqrinda dam oling va Ispan taomlarini mazzaqlang. Bu sayohat Ispaniyaning qalbigida boy bir tajriba va'da qiladi. Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555",
       imgUrl: [
@@ -343,6 +354,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Gretsiya",
       people: "1 nafar odam",
       price: 1900000,
+      quantity: 1,
       description:
         "Gretsiyaning qadimgi hayronliklarini va g'ayratga sazovor manzaralarini kashf qiling. Osiyoning tanaqul asri bo'ylab tashqarida joylashgan Atina akropolini ko'ring, Santorini sahilarida dam oling, Delphidagi muqaddas joylarni ziyorat qiling va lezzatli Mediterrane taomlarini mazzaqlang. Bu sayohat paketi G'arbiy madaniyatning orolida unutulmaz sayohat va'da qiladi. Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555",
       imgUrl: [
@@ -355,6 +367,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Avstraliya",
       people: "1 nafar odam",
       price: 2500000,
+      quantity: 1,
       description:
         "Avstraliyaning turli manzaralarini va nozik hayvonlarni o'rganing. Ikonik Sidneyniqa ooperasiyaning evini ko'ring, Veliqan suv bar'erini guvohlik qiling, Avstraliyaning orqa tarafdagi kengayishda yo'lingizni toping va jo'xori ko'alar va koalalarni kashf qiling. Bu sayohat paketi chet eldagida zarur sayohat va'da qiladi. Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555",
       imgUrl: [
@@ -367,6 +380,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Shveytsariya",
       people: "1 nafar odam",
       price: 2200000,
+      quantity: 1,
       description:
         "Shveytsariyaning tasviriy tabiatini qabul qiling. Shveytsariya tog'larining mashhur manzaralarining vaqti yo'lingizni toping, Cenevaniq kengayish bo'yicha dengiz safariga chiqing, Tsurixning mashhur ko'chalarini tahlil qiling va Shveytsariya shokoladlarini va pishloqlarini mazzaqlang. Bu sayohat nozik tabiatdi boy bir sayohat va'da qiladi. Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555",
       imgUrl: [
@@ -379,6 +393,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Tailand",
       people: "1 nafar odam",
       price: 1400000,
+      quantity: 1,
       description:
         "Tailandning chiroyli madaniyatini va g'arbiy madaniyatni o'rganing. Bangkokning chamadon ko'chalarini tashrif buyuring, Phuketning toza sahilarida dam oling, Ayutthayaning qadimgi haykallarini ziyorat qiling va thai taomlarini mazzaqlang. Bu sayohat paketi Tabassumlar mamlakatida katta bir sayohat va'da qiladi. Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555",
       imgUrl: [
@@ -391,6 +406,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Janubiy Afrika",
       people: "1 nafar odam",
       price: 2600000,
+      quantity: 1,
       description:
         "Janubiy Afrikaning turli tabiatini va hayvonlarini tadqiq qiling. Kruger Milliy Parkidagi safarini oling, Kaptaunning yashil shahriga sayohat qiling, Qimorlik Tog'ini ko'ring va Durbandagi chiroyli sahilarida dam oling. Bu sayohat paketi Tog'li sayohat va'da qiladi. Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555",
       imgUrl: [
@@ -403,6 +419,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       id: 0,
       name: "Хорезм",
       price: 1200000,
+      quantity: 1,
       people: "1 человек",
       category: "Uzbekiston",
       description: `Мы предлагаем новый турпакет для Узбекистана - Хорезм!
@@ -418,6 +435,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Самарканд",
       people: "1 человек",
       price: 1500000,
+      quantity: 1,
       description: `Представляем новый турпакет для Самарканда - культурной столицы Узбекистана!
 
 Присоединяйтесь к нам в увлекательное путешествие в один из самых замечательных городов Узбекистана - Самарканд. Город Самарканд является одним из важнейших исторических мест страны. Выберите этот прекрасный место для вашего личного путешествия!
@@ -446,6 +464,8 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Ташкент",
       people: "1 человек",
       price: 800000,
+
+      quantity: 1,
       description: `Присоединяйтесь к нам в увлекательное путешествие в Ташкент - столицу Узбекистана и культурный центр страны.
 
 Познакомьтесь с Ташкентом:
@@ -469,6 +489,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Бухара",
       people: "1 человек",
       price: 1000000,
+      quantity: 1,
       description: `Присоединяйтесь к нам в увлекательное путешествие в Бухару - исторический центр Узбекистана!
 
 Начните ваше путешествие по Бухаре:
@@ -491,6 +512,8 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Сурхандарья",
       people: "1 человек",
       price: 750000,
+
+      quantity: 1,
       description: `Мы представляем новый турпакет для Сурхандарьи - южного региона Узбекистана!
 
 Отправляйтесь с нами в незабываемое путешествие в южную часть Узбекистана - Сурхандарью. Этот регион расположен на западе страны и известен своим богатым историческим наследием, красивыми природными пейзажами и дружелюбным гостеприимством. Познакомьтесь с этими удивительными местами в нашем интересном туре. Для бесплатной консультации и бронирования свяжитесь с нами по телефону: +998913105555`,
@@ -504,6 +527,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Франция",
       people: "1 people",
       price: 2000000,
+      quantity: 1,
       description:
         "Исследуйте романтические улицы Парижа, посетите символ Эйфелевой башни, наслаждайтесь вкусной французской кухней и окунитесь в богатое культурное наследие Франции. Этот тур предлагает волшебное путешествие через некоторые из самых знаменитых достопримечательностей Франции. Для бесплатной консультации и бронирования свяжитесь с нами по телефону: +998913105555",
       imgUrl: [
@@ -516,6 +540,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Италия",
       people: "1 people",
       price: 1800000,
+      quantity: 1,
       description:
         "Познакомьтесь с очарованием Италии с этим турпакетом. Исследуйте исторический город Рим, восхищайтесь искусством и архитектурой Флоренции, прокатитесь по живописным каналам Венеции и наслаждайтесь изысканной итальянской кухней. Вас ждет путешествие по самым знаменитым городам Италии! Для бесплатной консультации и бронирования свяжитесь с нами по телефону: +998913105555",
       imgUrl: [
@@ -528,6 +553,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Япония",
       people: "1 people",
       price: 2300000,
+      quantity: 1,
       description:
         "Откройте для себя уникальное сочетание древних традиций и современных инноваций Японии. Почувствуйте атмосферу оживленного Токио, посетите древние храмы Киото, увидите символ Японии - гору Фудзи, и насладитесь подлинной японской кухней. Этот тур предлагает незабываемое путешествие в Страну Восходящего солнца. Для бесплатной консультации и бронирования свяжитесь с нами по телефону: +998913105555",
       imgUrl: [
@@ -540,6 +566,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Египет",
       people: "1 people",
       price: 1500000,
+      quantity: 1,
       description:
         "Отправьтесь в увлекательное путешествие в Египет и исследуйте его древние чудеса. Посетите впечатляющие пирамиды Гизы, прокатитесь по реке Нил, откройте для себя храмы Луксора и познакомьтесь с живой культурой Каира. Этот тур предлагает незабываемое приключение в стране фараонов. Для бесплатной консультации и бронирования свяжитесь с нами по телефону: +998913105555",
       imgUrl: [
@@ -552,6 +579,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Испания",
       people: "1 people",
       price: 1700000,
+      quantity: 1,
       description:
         "Исследуйте разнообразную красоту Испании с этим турпакетом. Гуляйте по историческим улицам Барселоны, восхищайтесь архитектурными чудесами Мадрида, отдыхайте на солнечных пляжах Коста-дель-Соль и наслаждайтесь изысканной испанской кухней. Этот тур обещает насыщенный опыт в сердце Испании. Для бесплатной консультации и бронирования свяжитесь с нами по телефону: +998913105555",
       imgUrl: [
@@ -564,6 +592,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Греция",
       people: "1 people",
       price: 1900000,
+      quantity: 1,
       description:
         "Откройте для себя древние чудеса и захватывающие пейзажи Греции. Исследуйте историческую Акрополь в Афинах, отдыхайте на потрясающих пляжах Санторини, посетите оракул в Дельфах и наслаждайтесь вкусной средиземноморской кухней. Этот турпакет предлагает незабываемое путешествие через колыбель Западной цивилизации. Для бесплатной консультации и бронирования свяжитесь с нами по телефону: +998913105555",
       imgUrl: [
@@ -576,6 +605,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Австралия",
       people: "1 people",
       price: 2500000,
+      quantity: 1,
       description:
         "Почувствуйте разнообразие пейзажей и уникальную фауну Австралии. Исследуйте символ Сиднея - Оперный театр, увидите величественный Большой Барьерный риф, отправитесь в путешествие в австралийскую пустыню и встретитесь с милыми кенгуру и коалами. Этот тур предлагает незабываемое приключение на Континенте. Для бесплатной консультации и бронирования свяжитесь с нами по телефону: +998913105555",
       imgUrl: [
@@ -588,6 +618,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Швейцария",
       people: "1 people",
       price: 2200000,
+      quantity: 1,
       description:
         "Окунитесь в живописную красоту Швейцарии с этим турпакетом. Наслаждайтесь захватывающими видами Швейцарских Альп, круизом по озеру Женева, исследуйте очаровательные улицы Цюриха и наслаждайтесь швейцарским шоколадом и сыром. Этот тур предлагает волшебное путешествие по стране захватывающих пейзажей. Для бесплатной консультации и бронирования свяжитесь с нами по телефону: +998913105555",
       imgUrl: [
@@ -600,6 +631,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Таиланд",
       people: "1 people",
       price: 1400000,
+      quantity: 1,
       description:
         "Почувствуйте живую культуру и экзотическую красоту Таиланда. Исследуйте оживленные улицы Бангкока, отдыхайте на безупречных пляжах Пхукета, посетите древние храмы Аюттхаи и наслаждайтесь вкусной тайской кухней. Этот турпакет предлагает захватывающее приключение в Стране улыбок. Для бесплатной консультации и бронирования свяжитесь с нами по телефону: +998913105555",
       imgUrl: [
@@ -612,6 +644,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Южная Африка",
       people: "1 people",
       price: 2600000,
+      quantity: 1,
       description:
         "Отправляйтесь в незабываемое путешествие по разнообразным пейзажам и дикой природе Южной Африки. Пройдите сафари в национальном парке Крюгера, исследуйте живописный город Кейптаун, посетите величественную гору Стола и насладитесь прекрасными пляжами Дурбана. Этот тур обещает насыщенный опыт в Стране Радуги. Для бесплатной консультации и бронирования свяжитесь с нами по телефону: +998913105555",
       imgUrl: [
@@ -625,6 +658,7 @@ Bepul konsultatsiya va bron uchun biz bilan bog'laning: +998913105555`,
       name: "Khorezm",
       people: "1 person",
       price: 1200000,
+      quantity: 1,
       category: "Uzbekiston",
       description: `We present a new tour package for Khorezm, Uzbekistan!
 
@@ -638,6 +672,7 @@ Embark on an unforgettable journey to Khorezm with our new exciting tour package
       name: "Samarkand",
       people: "1 person",
       price: 1500000,
+      quantity: 1,
       category: "Uzbekiston",
       description: `We present a new tour package for Samarkand, Uzbekistan!
 
@@ -665,6 +700,8 @@ For free consultation and booking, contact us at:+998913105555`,
       id: 2,
       name: "Tashkent",
       price: 800000,
+
+      quantity: 1,
       people: "1 person",
       category: "Uzbekiston",
       description: `We present a new tour package for Tashkent, Uzbekistan's capital city and cultural hub.
@@ -688,6 +725,7 @@ For free consultation and booking, contact us at:+998913105555`,
       id: 3,
       name: "Bukhara",
       price: 1000000,
+      quantity: 1,
       people: "1 person",
       category: "Uzbekiston",
       description: `We present a new tour package for Bukhara, Uzbekistan's historic center!
@@ -712,6 +750,8 @@ For free consultation and booking, contact us at:+998913105555`,
       id: 5,
       name: "Surxondaryo",
       price: 750000,
+
+      quantity: 1,
       people: "1 person",
       category: "Uzbekiston",
       description: `We present a new tour package for Surxondaryo, Uzbekistan!
@@ -727,6 +767,8 @@ For free consultation and booking, contact us at:+998913105555`,
       id: 6,
       name: "Fergana",
       price: 850000,
+
+      quantity: 1,
       people: "1 person",
       category: "Uzbekiston",
       description: `We present a new tour package for Fergana, Uzbekistan!
@@ -744,6 +786,7 @@ For free consultation and booking, contact us at:+998913105555`,
       name: "France",
       people: "1 people",
       price: 2000000,
+      quantity: 1,
       description:
         "Explore the romantic streets of Paris, visit the iconic Eiffel Tower, indulge in delicious French cuisine, and immerse yourself in the rich cultural heritage of France. This tour package offers an enchanting journey through some of the most famous landmarks in France. For free consultation and booking, contact us at:+998913105555",
       imgUrl: [
@@ -756,6 +799,7 @@ For free consultation and booking, contact us at:+998913105555`,
       name: "Italy",
       people: "1 people",
       price: 1800000,
+      quantity: 1,
       description:
         "Experience the charm of Italy with this tour package. Explore the historic city of Rome, marvel at the art and architecture in Florence, cruise through the scenic canals of Venice, and savor the delectable Italian cuisine. A journey through the most famous cities of Italy awaits you! For free consultation and booking, contact us at:+998913105555",
       imgUrl: [
@@ -768,6 +812,7 @@ For free consultation and booking, contact us at:+998913105555`,
       name: "Japan",
       people: "1 people",
       price: 2300000,
+      quantity: 1,
       description:
         "Discover the unique blend of ancient traditions and modern innovations in Japan. Experience the bustling city of Tokyo, visit ancient temples in Kyoto, witness the iconic Mount Fuji, and indulge in authentic Japanese cuisine. This tour package offers a memorable journey through the Land of the Rising Sun. For free consultation and booking, contact us at:+998913105555",
       imgUrl: [
@@ -780,6 +825,7 @@ For free consultation and booking, contact us at:+998913105555`,
       name: "Egypt",
       people: "1 people",
       price: 1500000,
+      quantity: 1,
       description:
         "Embark on a fascinating journey to Egypt and explore its ancient wonders. Visit the awe-inspiring pyramids of Giza, cruise along the Nile River, discover the temples of Luxor, and experience the vibrant culture of Cairo. This tour package promises an unforgettable adventure in the land of pharaohs. For free consultation and booking, contact us at:+998913105555",
       imgUrl: [
@@ -792,6 +838,7 @@ For free consultation and booking, contact us at:+998913105555`,
       name: "Spain",
       people: "1 people",
       price: 1700000,
+      quantity: 1,
       description:
         "Explore the diverse beauty of Spain with this tour package. Wander through the historic streets of Barcelona, admire the architectural wonders in Madrid, relax on the sunny beaches of Costa del Sol, and savor the delectable Spanish cuisine. This tour promises an enriching experience in the heart of Spain. For free consultation and booking, contact us at:+998913105555",
       imgUrl: [
@@ -804,6 +851,7 @@ For free consultation and booking, contact us at:+998913105555`,
       name: "Greece",
       people: "1 people",
       price: 1900000,
+      quantity: 1,
       description:
         "Discover the ancient wonders and breathtaking landscapes of Greece. Explore the historic Acropolis in Athens, relax on the stunning beaches of Santorini, visit the oracle of Delphi, and indulge in delicious Mediterranean cuisine. This tour package offers an unforgettable journey through the cradle of Western civilization. For free consultation and booking, contact us at:+998913105555",
       imgUrl: [
@@ -816,6 +864,7 @@ For free consultation and booking, contact us at:+998913105555`,
       name: "Australia",
       people: "1 people",
       price: 2500000,
+      quantity: 1,
       description:
         "Experience the diverse landscapes and unique wildlife of Australia. Explore the iconic Sydney Opera House, witness the majestic Great Barrier Reef, venture into the Australian Outback, and encounter adorable kangaroos and koalas. This tour package promises an extraordinary adventure Down Under. For free consultation and booking, contact us at:+998913105555",
       imgUrl: [
@@ -828,6 +877,7 @@ For free consultation and booking, contact us at:+998913105555`,
       name: "Switzerland",
       people: "1 people",
       price: 2200000,
+      quantity: 1,
       description:
         "Embrace the picturesque beauty of Switzerland with this tour package. Enjoy breathtaking views of the Swiss Alps, cruise along Lake Geneva, explore the charming streets of Zurich, and savor Swiss chocolates and cheese. This tour promises an enchanting journey through the land of stunning landscapes. For free consultation and booking, contact us at:+998913105555",
       imgUrl: [
@@ -840,6 +890,7 @@ For free consultation and booking, contact us at:+998913105555`,
       name: "Thailand",
       people: "1 people",
       price: 1400000,
+      quantity: 1,
       description:
         "Experience the vibrant culture and exotic beauty of Thailand. Explore the bustling streets of Bangkok, relax on the pristine beaches of Phuket, visit ancient temples in Ayutthaya, and enjoy the flavorful Thai cuisine. This tour package offers an exciting adventure in the Land of Smiles. For free consultation and booking, contact us at:+998913105555",
       imgUrl: [
@@ -852,6 +903,7 @@ For free consultation and booking, contact us at:+998913105555`,
       name: "South Africa",
       people: "1 people",
       price: 2600000,
+      quantity: 1,
       description:
         "Embark on an unforgettable journey through South Africa's diverse landscapes and wildlife. Take a safari in Kruger National Park, explore the vibrant city of Cape Town, visit the stunning Table Mountain, and enjoy the beautiful beaches of Durban. This tour package promises an enriching experience in the Rainbow Nation. For free consultation and booking, contact us at:+998913105555",
       imgUrl: [

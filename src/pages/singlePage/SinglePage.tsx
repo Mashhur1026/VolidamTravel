@@ -33,6 +33,7 @@ function SinglePage() {
         category: singleProductUse.category,
         description: singleProductUse.description,
         imgUrl: singleProductUse.imgUrl,
+        quantity: singleProductUse.quantity,
       };
       contextValue?.singleAddCard?.(newItem);
       let message = "";

@@ -19,6 +19,7 @@ interface Lang {
   mbtn2: string;
   btn: string;
   m: string;
+  td4: string;
 }
 
 function Cart() {
@@ -62,6 +63,7 @@ function Cart() {
     mbtn2: "",
     btn: "",
     m: "",
+    td4: "",
   });
 
   useEffect(() => {
@@ -79,6 +81,7 @@ function Cart() {
         mbtn2: "Bron qilish",
         btn: "Tur paketlar",
         m: "Sizning savatinggizda hechqanday Tur paket yo'q",
+        td4: "Miqdor",
       });
     } else if (language.eng) {
       setLang({
@@ -94,6 +97,7 @@ function Cart() {
         mbtn2: "Book",
         btn: "Tour packages ",
         m: "There are no Tour packages in your shopping cart",
+        td4: "Amount",
       });
     } else {
       setLang({
@@ -109,6 +113,7 @@ function Cart() {
         mbtn2: "Бронирование",
         btn: "Турпакеты",
         m: "В вашей корзине нет турпакетов",
+        td4: "Сумма",
       });
     }
   }, [language]);
@@ -137,6 +142,7 @@ function Cart() {
                   <td></td>
                   <td>{lang.td1}</td>
                   <td>{lang.td2}</td>
+                  <td>{lang.td4}</td>
                   <td>{lang.td3}</td>
                 </tr>
               </thead>
@@ -152,7 +158,7 @@ function Cart() {
                       <img src={item.imgUrl[0]} alt="" />
                     </td>
                     <td>{item.name}</td>
-
+                    <td>{item.quantity}</td>
                     <td>{item.price} UZS</td>
                   </tr>
                 ))}
@@ -194,25 +200,29 @@ function Cart() {
                   <td></td>
                   <td>{lang.td1}</td>
                   <td>{lang.td2}</td>
+                  <td>{lang.td4}</td>
                   <td>{lang.td3}</td>
                 </tr>
               </thead>
               <tbody>
-                {cartItems.map((item) => (
-                  <tr key={item.id}>
-                    <td>
-                      <button onClick={() => removeItem?.(item)}>
-                        <i className="far fa-times-circle"></i>
-                      </button>
-                    </td>
-                    <td>
-                      <img src={item.imgUrl[0]} alt="" />
-                    </td>
-                    <td>{item.name}</td>
-
-                    <td>{item.price} UZS</td>
-                  </tr>
-                ))}
+                {cartItems.map((item) => {
+                  console.log(item.quantity);
+                  return (
+                    <tr key={item.id}>
+                      <td>
+                        <button onClick={() => removeItem?.(item)}>
+                          <i className="far fa-times-circle"></i>
+                        </button>
+                      </td>
+                      <td>
+                        <img src={item.imgUrl[0]} alt="" />
+                      </td>
+                      <td>{item.name}</td>
+                      <td>{item.quantity}</td>
+                      <td>{item.price} UZS</td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </section>
