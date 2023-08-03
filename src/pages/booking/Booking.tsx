@@ -14,6 +14,7 @@ interface Lang {
   h12: string;
   btn: string;
   td4: string;
+  h3: string;
 }
 
 function Booking() {
@@ -27,8 +28,12 @@ function Booking() {
   const [bookingItems, setBookingItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
-    const items = localStorage.getItem("cartItems") ?? "";
-    setBookingItems(JSON.parse(items));
+    const items = localStorage.getItem("cartItems");
+    if (items) {
+      setBookingItems(JSON.parse(items));
+    } else {
+      setBookingItems([]);
+    }
   }, []);
 
   const [lang, setLang] = useState<Lang>({
@@ -40,6 +45,7 @@ function Booking() {
     h12: "",
     btn: "",
     td4: "",
+    h3: "",
   });
 
   useEffect(() => {
@@ -53,6 +59,7 @@ function Booking() {
         h12: "Siz hali hech qanday tur paketini band qilmagansiz",
         btn: "Tur paketlar",
         td4: "Miqdor",
+        h3: "Bron qilingan tur paketlar 1 hafta davomida bron bo'lib turadi! Agar 1 hafta ichida to'lov amalga oshirilmasa, unda broningizni saqlab qololmaymiz",
       });
     } else if (language.eng) {
       setLang({
@@ -64,6 +71,7 @@ function Booking() {
         h12: "You have not booked any tour packages yet",
         btn: "Tour packages ",
         td4: "Amount",
+        h3: "Booked tour packages are reserved for 1 week! If payment is not made within 1 week, we will not be able to hold your reservation",
       });
     } else {
       setLang({
@@ -75,6 +83,7 @@ function Booking() {
         h12: "Вы еще не забронировали турпакеты",
         btn: "Турпакеты",
         td4: "Сумма",
+        h3: "Забронированные турпакеты резервируются на 1 неделю! Если оплата не будет произведена в течение 1 недели, мы не сможем удержать ваше бронирование.",
       });
     }
   }, [language]);
@@ -148,11 +157,7 @@ function Booking() {
             </table>
           </section>
           <div className="elon">
-            <h3>
-              Bron qilingan tur paketlar 1 hafta davomida bron bo'lib turadi!
-              Agar 1 hafta ichida to'lov amalga oshirilmasa, unda broningizni
-              saqlab qololmaymiz
-            </h3>
+            <h3>{lang.h3}</h3>
           </div>
           <div className="btn-container-booking">
             <Link to={`/Checkout`}>
