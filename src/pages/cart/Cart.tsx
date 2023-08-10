@@ -206,7 +206,6 @@ function Cart() {
               </thead>
               <tbody>
                 {cartItems.map((item) => {
-                  console.log(item.quantity);
                   return (
                     <tr key={item.id}>
                       <td>

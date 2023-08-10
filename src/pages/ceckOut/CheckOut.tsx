@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import DataContext from "../../DataContext";
 import "./checkout.css";
+import { Link } from "react-router-dom";
 
 interface FormValues {
   ismingiz: string;
@@ -236,7 +237,7 @@ function CheckOut() {
             placeholder={lang.ph4}
             name="qoshmcha"
           ></textarea>
-          <button>{lang.mbtn}</button>
+          <Link to={`/Code`}>{lang.mbtn}</Link>
         </form>
       </section>
     </>
