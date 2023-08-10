@@ -10,7 +10,6 @@ import Contact from "./pages/contact/Contact";
 import CheckOut from "./pages/ceckOut/CheckOut";
 import Booking from "./pages/booking/Booking";
 import Sucses from "./components/sucses/Sucses";
-import Code from "./components/code/Code";
 
 function App() {
   return (
@@ -27,7 +26,6 @@ function App() {
         <Route path="/Checkout" element={<CheckOut />} />
         <Route path="/Booking" element={<Booking />} />
         <Route path="/Succes" element={<Sucses />} />
-        <Route path="/Code" element={<Code />} />
       </Routes>
       <Footer />
     </>

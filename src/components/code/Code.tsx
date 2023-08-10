@@ -1,15 +1,6 @@
-import { useNavigate } from "react-router-dom";
 import "./code.css";
-import { useState } from "react";
 
-function Code() {
-  const navigate = useNavigate();
-  const [code, setCode] = useState("");
-
-  const handleClick = () => {
-    console.log(code);
-    navigate("/Succes");
-  };
+function Code({code, setCode, handleClick}) {
 
   return (
     <div className="code">
