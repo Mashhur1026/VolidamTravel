@@ -9,6 +9,7 @@ import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import CheckOut from "./pages/ceckOut/CheckOut";
 import Booking from "./pages/booking/Booking";
+import Sucses from "./components/sucses/Sucses";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Checkout" element={<CheckOut />} />
         <Route path="/Booking" element={<Booking />} />
+        <Route path="/Succes" element={<Sucses />} />
       </Routes>
       <Footer />
     </>
