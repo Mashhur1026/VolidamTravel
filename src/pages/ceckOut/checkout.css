@@ -97,7 +97,7 @@
   border: 1px solid #e1e1e1;
 }
 
-#checkout-form-details form a {
+#checkout-form-details form button {
   text-decoration: none;
   background: #088178;
   color: #fff;
@@ -125,7 +125,7 @@
     width: 80%;
   }
 
-  #checkout-form-details form a {
+  #checkout-form-details form button {
     font-size: 12px;
     padding: 13px 18px;
   }

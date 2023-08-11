@@ -1,15 +1,17 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import DataContext from "../../DataContext";
 import "./checkout.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Code from "../../components/code/Code";
-import PaymeServices from '../../payme'
+import PaymeServices from "../../payme";
 import { Notify } from "notiflix";
 
 interface FormValues {
-  firstName: string;
-  lastName: string;
+  firstname: string;
+  lastname: string;
   phone: string;
+  cardNumber: string;
+  cardExp: string;
   qoshmcha: string;
 }
 
@@ -33,22 +35,22 @@ interface Lang {
 }
 
 function CheckOut() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const contextValue = useContext(DataContext);
-  const [askCode, setAskCode] = useState(false)
-  const [code, setCode] = useState('')
-  const [token, setToken] = useState('')
-  const [payme, setPayme] = useState()
-  const [reqId, setReqId] = useState()
-  const [payer, setPayer] = useState({})
+  const [askCode, setAskCode] = useState(false);
+  const [code, setCode] = useState("");
+  const [token, setToken] = useState("");
+  const [payme, setPayme] = useState<PaymeServices | undefined>();
+  const [reqId, setReqId] = useState<number | null>(null);
+  const [payer, setPayer] = useState({} as any);
 
   if (!contextValue) {
     return <div>Loading...</div>;
   }
 
   const { language } = contextValue;
-  const cartItems = contextValue ? contextValue.cartItems : [];
-  const total = contextValue ? contextValue.total : 0;
+  const cartItems = contextValue.cartItems;
+  const total = contextValue.total;
 
   const [lang, setLang] = useState<Lang>({
     h1: "",
@@ -73,6 +75,8 @@ function CheckOut() {
     firstname: "",
     lastname: "",
     phone: "",
+    cardNumber: "",
+    cardExp: "",
     qoshmcha: "",
   });
 
@@ -88,101 +92,114 @@ function CheckOut() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const {firstname, lastname, cardNumber, cardExp, phone} = formValues
+    const { firstname, lastname, cardNumber, cardExp, phone } = formValues;
 
-    setPayer({name: `${firstname} ${lastname}`, phone})
-    
-    const endpoint = 'https://checkout.paycom.uz/api'
+    setPayer({ name: `${firstname} ${lastname}`, phone });
 
-    const payme_id = import.meta.env.VITE_PAYME_ID
-    const payme_key = import.meta.env.VITE_PAYME_KEY
-    const id = new Date().valueOf()
-    setReqId(id)    
+    const endpoint = "https://checkout.paycom.uz/api";
 
-    const paymeModel = await new PaymeServices(endpoint, payme_id, payme_key)
-    const cc = await paymeModel.createCard(reqId, cardNumber, cardExp.replace('/', ''))
-    
+    const payme_id = import.meta.env.VITE_PAYME_ID;
+    const payme_key = import.meta.env.VITE_PAYME_KEY;
+    const id = new Date().valueOf();
+    setReqId(id);
+
+    const paymeModel = new PaymeServices(endpoint, payme_id, payme_key);
+    const cc = await paymeModel.createCard(
+      id.toString(),
+      cardNumber,
+      cardExp.replace("/", "")
+    );
+
     if (!cc.error) {
-      setToken(cc.result.card.token)
-      setPayme(paymeModel)
-      
-      const codeRes = await paymeModel.getVerifyCode(reqId, cc.result.card.token)
-      
+      setToken(cc.result.card.token);
+      setPayme(paymeModel);
+
+      const codeRes = await paymeModel.getVerifyCode(
+        id.toString(),
+        cc.result.card.token
+      );
+
       if (!codeRes.error) {
-        setAskCode(true)    
+        setAskCode(true);
       } else {
         console.log(codeRes.error);
-        Notify.failure(codeRes.error.message)
+        Notify.failure(codeRes.error.message);
       }
-      
     } else {
       console.log(cc.error);
-      Notify.failure(cc.error.message)
-      
+      Notify.failure(cc.error.message);
     }
   };
 
   const handleCodeClick = async () => {
-    let verified = false
+    if (reqId === null) {
+      console.log("reqId is null");
+      return;
+    }
 
-      while (verified === false) {
+    let verified = false;
 
-        const codeRes = await payme.verifyCode(reqId, token, code)
+    while (verified === false) {
+      const codeRes = await payme!.verifyCode(reqId.toString(), token, code);
 
-        if (!codeRes.error) {
-          verified = true
-        } else if (codeRes.error.code === -32602) {
-          console.log(codeRes.error);
-          Notify.failure(codeRes.error.message)
-        } else {
-          verified = true
-          console.log(codeRes.error);
-          Notify.failure(codeRes.error.message)
-        }
+      if (!codeRes.error) {
+        verified = true;
+      } else if (codeRes.error.code === -32602) {
+        console.log(codeRes.error);
+        Notify.failure(codeRes.error.message);
+      } else {
+        verified = true;
+        console.log(codeRes.error);
+        Notify.failure(codeRes.error.message);
       }
+    }
 
-      let chek = await payme.createReceipt(
-        reqId,
-        total*100,
-        { order_number: reqId },
-        {
-          receipt_type: 0,
-          items: [
-            {
-              title: 'Tur paket',
-              price: total*100,
-              count: 1,
-              code: '10703999001000000',
-              package_code: '1495086',
-              vat_percent: 0,
-            },
-          ],
-        }
-      )
+    let chek = await payme!.createReceipt(
+      reqId.toString(),
+      total * 100,
+      `order_number:${reqId.toString()}`,
+      JSON.stringify({
+        receipt_type: 0,
+        items: [
+          {
+            title: "Tur paket",
+            price: total * 100,
+            count: 1,
+            code: "10703999001000000",
+            package_code: "1495086",
+            vat_percent: 0,
+          },
+        ],
+      })
+    );
 
-      if (!chek.error) {
-        const receiptId = chek.result.receipt._id
+    if (!chek.error) {
+      const receiptId = chek.result.receipt._id;
 
-        let payment = await payme.payReceipt(reqId, receiptId, token, payer)
+      let payment = await payme!.payReceipt(
+        reqId.toString(),
+        receiptId,
+        token,
+        payer
+      );
 
-        if (payment.result?.receipt?.state === 4) {
-          const removeRes = await payme.remove(reqId, token)
-            if (removeRes.result?.success) {
-              navigate('/Succes')
-            } else {
-              console.log(removeRes.error);
-              Notify.failure(removeRes.error.message)
-            }
+      if (payment.result?.receipt?.state === 4) {
+        const removeRes = await payme!.remove(reqId.toString(), token);
+        if (removeRes.result?.success) {
+          navigate("/Succes");
         } else {
+          console.log(removeRes.error);
+          Notify.failure(removeRes.error.message);
+        }
+      } else {
         console.log(payment.error);
-        Notify.failure(payment.error.message)
+        Notify.failure(payment.error.message);
       }
-        
-      }else {
-        console.log(chek.error);
-        Notify.failure(chek.error.message)
-      }
-  }
+    } else {
+      console.log(chek.error);
+      Notify.failure(chek.error.message);
+    }
+  };
 
   useEffect(() => {
     if (language.uzb) {
@@ -220,8 +237,8 @@ function CheckOut() {
         ph3: "Number",
         td4: "Amount",
         ph4: "Message",
-        c: "Karta raqami",
-        e: "Expiry date of card ",
+        c: "Card number",
+        e: "Expiry date of card",
       });
     } else {
       setLang({
@@ -245,7 +262,9 @@ function CheckOut() {
     }
   }, [language]);
 
-  return askCode ? <Code code={code} setCode={setCode} handleClick={handleCodeClick} /> : (
+  return askCode ? (
+    <Code code={code} setCode={setCode} handleClick={handleCodeClick} />
+  ) : (
     <>
       <section id="chechout">
         <h1>{lang.h1}</h1>
