@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+// @ts-nocheck
+import { useContext, useEffect, useState } from "react";
 import DataContext from "../../DataContext";
 import "./checkout.css";
 import { useNavigate } from "react-router-dom";
@@ -7,11 +8,9 @@ import PaymeServices from "../../payme";
 import { Notify } from "notiflix";
 
 interface FormValues {
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
   phone: string;
-  cardNumber: string;
-  cardExp: string;
   qoshmcha: string;
 }
 
@@ -40,17 +39,17 @@ function CheckOut() {
   const [askCode, setAskCode] = useState(false);
   const [code, setCode] = useState("");
   const [token, setToken] = useState("");
-  const [payme, setPayme] = useState<PaymeServices | undefined>();
-  const [reqId, setReqId] = useState<number | null>(null);
-  const [payer, setPayer] = useState({} as any);
+  const [payme, setPayme] = useState();
+  const [reqId, setReqId] = useState();
+  const [payer, setPayer] = useState({});
 
   if (!contextValue) {
     return <div>Loading...</div>;
   }
 
   const { language } = contextValue;
-  const cartItems = contextValue.cartItems;
-  const total = contextValue.total;
+  const cartItems = contextValue ? contextValue.cartItems : [];
+  const total = contextValue ? contextValue.total : 0;
 
   const [lang, setLang] = useState<Lang>({
     h1: "",
@@ -75,8 +74,6 @@ function CheckOut() {
     firstname: "",
     lastname: "",
     phone: "",
-    cardNumber: "",
-    cardExp: "",
     qoshmcha: "",
   });
 
@@ -103,9 +100,9 @@ function CheckOut() {
     const id = new Date().valueOf();
     setReqId(id);
 
-    const paymeModel = new PaymeServices(endpoint, payme_id, payme_key);
+    const paymeModel = await new PaymeServices(endpoint, payme_id, payme_key);
     const cc = await paymeModel.createCard(
-      id.toString(),
+      reqId,
       cardNumber,
       cardExp.replace("/", "")
     );
@@ -115,7 +112,7 @@ function CheckOut() {
       setPayme(paymeModel);
 
       const codeRes = await paymeModel.getVerifyCode(
-        id.toString(),
+        reqId,
         cc.result.card.token
       );
 
@@ -132,15 +129,10 @@ function CheckOut() {
   };
 
   const handleCodeClick = async () => {
-    if (reqId === null) {
-      console.log("reqId is null");
-      return;
-    }
-
     let verified = false;
 
     while (verified === false) {
-      const codeRes = await payme!.verifyCode(reqId.toString(), token, code);
+      const codeRes = await payme.verifyCode(reqId, token, code);
 
       if (!codeRes.error) {
         verified = true;
@@ -154,8 +146,7 @@ function CheckOut() {
       }
     }
 
-    // @ts-ignore
-    let chek = await payme!.createReceipt(
+    let chek = await payme.createReceipt(
       reqId,
       total * 100,
       { order_number: reqId },
@@ -177,15 +168,10 @@ function CheckOut() {
     if (!chek.error) {
       const receiptId = chek.result.receipt._id;
 
-      let payment = await payme!.payReceipt(
-        reqId.toString(),
-        receiptId,
-        token,
-        payer
-      );
+      let payment = await payme.payReceipt(reqId, receiptId, token, payer);
 
       if (payment.result?.receipt?.state === 4) {
-        const removeRes = await payme!.remove(reqId.toString(), token);
+        const removeRes = await payme.remove(reqId, token);
         if (removeRes.result?.success) {
           navigate("/Succes");
         } else {
@@ -238,8 +224,8 @@ function CheckOut() {
         ph3: "Number",
         td4: "Amount",
         ph4: "Message",
-        c: "Card number",
-        e: "Expiry date of card",
+        c: "Karta raqami",
+        e: "Expiry date of card ",
       });
     } else {
       setLang({

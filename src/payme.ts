@@ -1,171 +1,139 @@
-import axios, { AxiosResponse } from "axios";
-
-interface VerifyCodeParams {
-  token: string;
-}
-
-interface VerifyParams {
-  token: string;
-  code: string;
-}
-
-interface CheckParams {
-  token: string;
-}
-
-interface ReceiptParams {
-  amount: number;
-  account: {};
-  detail: {};
-}
-
-interface PayReceiptParams {
-  id: string;
-  token: string;
-  payer: string;
-}
-
-interface SendReceiptParams {
-  id: string;
-  phone: string;
-}
+// @ts-nocheck
+import axios from "axios";
 
 export default class PaymeServices {
-  private readonly endpoint: string;
-
-  private readonly cardsConfig = {
-    headers: {
-      "X-Auth": "",
-    },
-  };
-  private readonly receiptConfig = {
-    headers: {
-      "X-Auth": "",
-    },
-  };
-
-  constructor(endpoint: string, id: string, key: string) {
+  constructor(endpoint, id, key) {
     this.endpoint = endpoint;
-    this.cardsConfig.headers["X-Auth"] = id;
-    this.receiptConfig.headers["X-Auth"] = `${id}:${key}`;
+    this.id = id;
+    this.key = key;
+
+    this.cardsConfig = {
+      headers: {
+        "X-Auth": `${id}`,
+      },
+    };
+    this.receiptConfig = {
+      headers: {
+        "X-Auth": `${id}:${key}`,
+      },
+    };
   }
 
-  private async makeRequest(
-    id: string,
-    method: string,
-    params: any,
-    config: any
-  ): Promise<any> {
+  async createCard(id, cardNumber, cardExpire) {
     const data = {
       id,
-      method,
-      params,
+      method: "cards.create",
+      params: {
+        card: { number: cardNumber, expire: cardExpire },
+        save: true,
+      },
     };
 
-    const response: AxiosResponse = await axios.post(
-      this.endpoint,
-      data,
-      config
-    );
-    return response.data;
+    let request = await axios.post(this.endpoint, data, this.cardsConfig);
+
+    return request.data;
   }
 
-  async createCard(
-    id: string,
-    cardNumber: string,
-    cardExpire: string
-  ): Promise<any> {
-    const params = {
-      card: { number: cardNumber, expire: cardExpire },
-      save: true,
-    };
-
-    return this.makeRequest(id, "cards.create", params, this.cardsConfig);
-  }
-
-  async getVerifyCode(id: string, token: string): Promise<any> {
-    const params: VerifyCodeParams = {
-      token,
-    };
-
-    return this.makeRequest(
+  async getVerifyCode(id, token) {
+    const data = {
       id,
-      "cards.get_verify_code",
-      params,
-      this.cardsConfig
-    );
-  }
-
-  async verifyCode(id: string, token: string, code: string): Promise<any> {
-    const params: VerifyParams = {
-      token,
-      code,
+      method: "cards.get_verify_code",
+      params: {
+        token,
+      },
     };
 
-    return this.makeRequest(id, "cards.verify", params, this.cardsConfig);
+    let request = await axios.post(this.endpoint, data, this.cardsConfig);
+
+    return request.data;
   }
 
-  async check(id: string, token: string): Promise<any> {
-    const params: CheckParams = {
-      token,
+  async verifyCode(id, token, code) {
+    const data = {
+      id,
+      method: "cards.verify",
+      params: {
+        token,
+        code,
+      },
     };
 
-    return this.makeRequest(id, "cards.check", params, this.cardsConfig);
+    let request = await axios.post(this.endpoint, data, this.cardsConfig);
+
+    return request.data;
   }
 
-  async remove(id: string, token: string): Promise<any> {
-    const params: CheckParams = {
-      token,
+  async check(id, token) {
+    const data = {
+      id,
+      method: "cards.check",
+      params: {
+        token,
+      },
     };
 
-    return this.makeRequest(id, "cards.remove", params, this.cardsConfig);
+    let request = await axios.post(this.endpoint, data, this.cardsConfig);
+
+    return request.data;
   }
 
-  async createReceipt(
-    id: number,
-    amount: number,
-    account: {},
-    detail: {}
-  ): Promise<any> {
-    const params: ReceiptParams = {
-      amount,
-      account,
-      detail,
+  async remove(id, token) {
+    const data = {
+      id,
+      method: "cards.remove",
+      params: {
+        token,
+      },
     };
 
-    return this.makeRequest(
-      id.toString(),
-      "receipts.create",
-      params,
-      this.receiptConfig
-    );
+    let request = await axios.post(this.endpoint, data, this.cardsConfig);
+
+    return request.data;
   }
 
-  async payReceipt(
-    id: string,
-    receiptId: string,
-    token: string,
-    payer: string
-  ): Promise<any> {
-    const params: PayReceiptParams = {
-      id: receiptId,
-      token,
-      payer,
+  async createReceipt(id, amount, account, detail) {
+    const data = {
+      id,
+      method: "receipts.create",
+      params: {
+        amount,
+        account,
+        detail,
+      },
     };
 
-    return this.makeRequest(id, "receipts.pay", params, this.receiptConfig);
+    let request = await axios.post(this.endpoint, data, this.receiptConfig);
+
+    return request.data;
   }
 
-  async sendReceipt(
-    id: string,
-    receiptId: string,
-    phone: string
-  ): Promise<any> {
-    const params: SendReceiptParams = {
-      id: receiptId,
-      phone,
+  async payReceipt(id, receiptId, token, payer) {
+    const data = {
+      id,
+      method: "receipts.pay",
+      params: {
+        id: receiptId,
+        token,
+        payer,
+      },
     };
 
-    return this.makeRequest(id, "receipts.send", params, this.receiptConfig);
+    let request = await axios.post(this.endpoint, data, this.receiptConfig);
+
+    return request.data;
+  }
+  async sendReceipt(id, receiptId, phone) {
+    const data = {
+      id,
+      method: "receipts.send",
+      params: {
+        id: receiptId,
+        phone,
+      },
+    };
+
+    let request = await axios.post(this.endpoint, data, this.receiptConfig);
+
+    return request.data;
   }
 }
