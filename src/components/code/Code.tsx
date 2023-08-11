@@ -1,7 +1,12 @@
 import "./code.css";
 
-function Code({code, setCode, handleClick}) {
+interface CodeProps {
+  code: string;
+  setCode: (code: string) => void;
+  handleClick: () => void;
+}
 
+function Code({ code, setCode, handleClick }: CodeProps) {
   return (
     <div className="code">
       <div className="blure">

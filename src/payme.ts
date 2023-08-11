@@ -1,10 +1,5 @@
 import axios, { AxiosResponse } from "axios";
 
-interface CardParams {
-  number: string;
-  expire: string;
-}
-
 interface VerifyCodeParams {
   token: string;
 }
@@ -20,8 +15,8 @@ interface CheckParams {
 
 interface ReceiptParams {
   amount: number;
-  account: string;
-  detail: string;
+  account: {};
+  detail: {};
 }
 
 interface PayReceiptParams {
@@ -37,8 +32,6 @@ interface SendReceiptParams {
 
 export default class PaymeServices {
   private readonly endpoint: string;
-  private readonly id: string;
-  private readonly key: string;
 
   private readonly cardsConfig = {
     headers: {
@@ -53,9 +46,6 @@ export default class PaymeServices {
 
   constructor(endpoint: string, id: string, key: string) {
     this.endpoint = endpoint;
-    this.id = id;
-    this.key = key;
-
     this.cardsConfig.headers["X-Auth"] = id;
     this.receiptConfig.headers["X-Auth"] = `${id}:${key}`;
   }
@@ -132,10 +122,10 @@ export default class PaymeServices {
   }
 
   async createReceipt(
-    id: string,
+    id: number,
     amount: number,
-    account: string,
-    detail: string
+    account: {},
+    detail: {}
   ): Promise<any> {
     const params: ReceiptParams = {
       amount,
@@ -143,7 +133,12 @@ export default class PaymeServices {
       detail,
     };
 
-    return this.makeRequest(id, "receipts.create", params, this.receiptConfig);
+    return this.makeRequest(
+      id.toString(),
+      "receipts.create",
+      params,
+      this.receiptConfig
+    );
   }
 
   async payReceipt(

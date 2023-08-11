@@ -154,11 +154,12 @@ function CheckOut() {
       }
     }
 
+    // @ts-ignore
     let chek = await payme!.createReceipt(
-      reqId.toString(),
+      reqId,
       total * 100,
-      `order_number:${reqId.toString()}`,
-      JSON.stringify({
+      { order_number: reqId },
+      {
         receipt_type: 0,
         items: [
           {
@@ -170,7 +171,7 @@ function CheckOut() {
             vat_percent: 0,
           },
         ],
-      })
+      }
     );
 
     if (!chek.error) {
